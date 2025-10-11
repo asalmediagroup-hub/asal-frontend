@@ -17,7 +17,7 @@ import type { Language } from "@/components/language-provider";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showMore, setShowMore] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(""); // which desktop dropdown is open
+  const [openDropdown, setOpenDropdown] = useState(""); // which dropdown is open
   const [showHiddenMenus, setShowHiddenMenus] = useState(false); // "More..." hover state
 
   // Language provider
@@ -60,7 +60,7 @@ export function Header() {
     services: tt("servicesNav", "Services"),
     brands: tt("brandsNav", "Brands"),
     packages: tt("packagesNav", "Packages"),
-    news: t("News"),
+    news: tt("newsNav", "News"),
     portfolio: tt("portfolioNav", "Portfolio"),
     careers: tt("careers", "Careers"),
     nasiye: t("Nasiye"),
@@ -81,35 +81,35 @@ export function Header() {
   const mainMenu: Array<
     | { href: string; label: string }
     | {
-      href: string;
-      label: string;
-      dropdown: { href: string; label: string }[];
-    }
+        href: string;
+        label: string;
+        dropdown: { href: string; label: string }[];
+      }
   > = [
-      { href: "/", label: labels.home },
-      { href: "/about", label: labels.about },
-      { href: "/services", label: labels.services },
-      {
-        href: "/brands",
-        label: labels.brands,
-        dropdown: [
-          { href: "/brands/asal-tv", label: labels.brandAsalTV },
-          { href: "/brands/jiil-media", label: labels.brandJiil },
-          { href: "/brands/masrax-production", label: labels.brandMasrax },
-          { href: "/brands/nasiye", label: labels.brandNasiye },
-        ],
-      },
-      {
-        href: "/packages",
-        label: labels.packages,
-        dropdown: [
-          { href: "/packages/diini", label: labels.diini },
-          { href: "/packages/social", label: labels.social },
-          { href: "/packages/news", label: labels.news },
-          { href: "/packages/sports", label: labels.sports },
-        ],
-      },
-    ];
+    { href: "/", label: labels.home },
+    { href: "/about", label: labels.about },
+    { href: "/services", label: labels.services },
+    {
+      href: "/brands",
+      label: labels.brands,
+      dropdown: [
+        { href: "/brands/asal-tv", label: labels.brandAsalTV },
+        { href: "/brands/jiil-media", label: labels.brandJiil },
+        { href: "/brands/masrax-production", label: labels.brandMasrax },
+        { href: "/brands/nasiye", label: labels.brandNasiye },
+      ],
+    },
+    {
+      href: "/packages",
+      label: labels.packages,
+      dropdown: [
+        { href: "/packages/diini", label: labels.diini },
+        { href: "/packages/social", label: labels.social },
+        { href: "/packages/news", label: labels.news },
+        { href: "/packages/sports", label: labels.sports },
+      ],
+    },
+  ];
 
   // Hidden menus (for "More...")
   const hiddenMenus: { href: string; label: string }[] = [
@@ -151,8 +151,9 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav
-            className={`hidden lg:flex items-center space-x-6 ${isRTL ? "space-x-reverse" : ""
-              }`}
+            className={`hidden lg:flex items-center space-x-6 ${
+              isRTL ? "space-x-reverse" : ""
+            }`}
           >
             {mainMenu.map((item, idx) =>
               "dropdown" in item ? (
@@ -203,8 +204,9 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="lg"
-                className={`px-4 py-2 text-center text-base ${showHiddenMenus || showMore ? "bg-muted" : ""
-                  }`}
+                className={`px-4 py-2 text-center text-base ${
+                  showHiddenMenus || showMore ? "bg-muted" : ""
+                }`}
                 tabIndex={0}
                 onClick={() =>
                   setShowMore((prev) => {
@@ -240,10 +242,11 @@ export function Header() {
             </div>
           </nav>
 
-          {/* Language Switcher & Actions */}
+          {/* Desktop: Language + Actions */}
           <div
-            className={`hidden lg:flex items-center space-x-3 xl:space-x-4 ${isRTL ? "space-x-reverse" : ""
-              }`}
+            className={`hidden lg:flex items-center space-x-3 xl:space-x-4 ${
+              isRTL ? "space-x-reverse" : ""
+            }`}
           >
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -283,7 +286,7 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle */}
           <button
             className="lg:hidden p-2 -mr-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -339,6 +342,7 @@ export function Header() {
                 )
               )}
 
+              {/* Mobile "More..." */}
               <Button
                 variant="ghost"
                 size="sm"
@@ -366,15 +370,48 @@ export function Header() {
                 </div>
               )}
 
-              <Link href="/auth/login">
-                <Button
-                  className="bg-primary hover:bg-[#B5040F] text-white border border-primary hover:border-[#B5040F] shadow-sm mt-4"
-                  size="sm"
-                >
-                  <LogIn className="h-4 w-4 mr-2" />
-                  {labels.admin}
-                </Button>
-              </Link>
+              {/* MOBILE: Language + Actions */}
+              <div className="mt-4 pt-4 border-t space-y-3">
+                {/* Language switcher (mobile) */}
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" className="w-full justify-start">
+                      <Globe className="h-4 w-4 mr-2" />
+                      <span className="mr-2">
+                        {languageOptions.find((l) => l.code === language)?.flag}
+                      </span>
+                      <span className="font-medium">{language.toUpperCase()}</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" className="w-44">
+                    {languageOptions.map((lang) => (
+                      <DropdownMenuItem
+                        key={lang.code}
+                        onClick={() => handleChangeLanguage(lang.code)}
+                        className="flex items-center space-x-2"
+                      >
+                        <span>{lang.flag}</span>
+                        <span>{lang.name}</span>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+
+                {/* Action buttons (mobile) */}
+                <div className="flex gap-2">
+                  <Button className="bg-[#B5040F] hover:bg-[#B5040F]/90 text-white flex-1">
+                    <Download className="h-4 w-4 mr-2" />
+                    {labels.nasiye}
+                  </Button>
+
+                  <Link href="/auth/login" className="flex-1">
+                    <Button className="w-full bg-primary hover:bg-[#B5040F] text-white border border-primary hover:border-[#B5040F] shadow-sm">
+                      <LogIn className="h-4 w-4 mr-2" />
+                      {labels.admin}
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </nav>
           </div>
         )}
