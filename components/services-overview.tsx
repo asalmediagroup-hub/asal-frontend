@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Video, Podcast as Broadcast, Megaphone, Users } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/components/language-provider";
+import { motion, useReducedMotion } from "framer-motion";
+import * as React from "react";
 
 type ServiceItem = {
   title: string;
@@ -16,6 +18,7 @@ type ServiceItem = {
 export function ServicesOverview() {
   const { t, language } = useLanguage();
   const isRTL = language === "ar";
+  const prefersReducedMotion = useReducedMotion();
 
   const services: ServiceItem[] = [
     {
@@ -64,6 +67,11 @@ export function ServicesOverview() {
     },
   ];
 
+  const hoverTilt = (rtl: boolean) =>
+    prefersReducedMotion
+      ? {}
+      : { rotate: rtl ? -1.2 : 1.2, y: -4, scale: 1.01 };
+
   return (
     <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +79,7 @@ export function ServicesOverview() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-[#B5040F]">
             {t("servicesPageTitle")}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
             {t("servicesPageSubtitle")}
           </p>
         </div>
@@ -80,50 +88,85 @@ export function ServicesOverview() {
           {services.map((service) => {
             const IconComponent = service.icon;
             return (
-              <Card
+              <motion.div
                 key={service.title}
-                className="group hover:shadow-lg transition-all duration-300"
-                style={{ backgroundColor: "#F9FAFA" }}
+                whileHover={hoverTilt(isRTL)}
+                whileTap={prefersReducedMotion ? {} : { scale: 0.997 }}
+                transition={{ type: "spring", stiffness: 300, damping: 24, mass: 0.6 }}
+                className="group relative"
               >
-                <CardContent className="p-8">
-                  <div className={`flex items-start ${isRTL ? "space-x-reverse" : ""} space-x-4`}>
-                    <div className="p-0 rounded-full flex-shrink-0">
-                      <IconComponent className="h-6 w-6" style={{ color: "#B5040F80" }} />
-                    </div>
-                    <div className="space-y-4 flex-1">
-                      <div className="space-y-2">
-                        <h3 className="text-xl font-semibold" style={{ color: "#B5040F" }}>
-                          {service.title}
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {service.description}
-                        </p>
+                {/* Soft brand glow ring on hover */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                     style={{ boxShadow: "0 0 0 2px rgba(181,4,15,0.12), 0 12px 30px rgba(181,4,15,0.10)" }} />
+
+                <Card
+                  className="relative overflow-hidden rounded-2xl border border-transparent hover:border-[#B5040F1A] transition-all duration-300"
+                  style={{ backgroundColor: "#F9FAFA" }}
+                >
+                  {/* Subtle gradient wash that intensifies on hover */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#B5040F0D] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  <CardContent className="p-8">
+                    <div className={`flex items-start ${isRTL ? "space-x-reverse" : ""} space-x-4`}>
+                      {/* Icon */}
+                      <div className="p-2 rounded-full flex-shrink-0 bg-white/70 shadow-sm transition-transform duration-300 group-hover:scale-105">
+                        <IconComponent
+                          className="h-6 w-6 transition-colors duration-300"
+                          style={{ color: "#B5040F80" }}
+                        />
                       </div>
 
-                      <ul className="space-y-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <li
-                            key={featureIndex}
-                            className={`flex items-center ${isRTL ? "space-x-reverse" : ""} space-x-2 text-sm text-muted-foreground`}
+                      {/* Text block */}
+                      <div className="space-y-4 flex-1">
+                        <div className="space-y-2">
+                          <h3
+                            className="text-xl font-semibold transition-colors duration-300"
+                            style={{ color: "#B5040F" }}
                           >
-                            <div
-                              className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                              style={{ backgroundColor: "#B5040F" }}
-                            />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
+                            {service.title}
+                          </h3>
+
+                          <p className="text-muted-foreground leading-relaxed transition-colors duration-300 group-hover:text-[#6b7280]">
+                            {service.description}
+                          </p>
+                        </div>
+
+                        <ul className="space-y-2">
+                          {service.features.map((feature, featureIndex) => (
+                            <li
+                              key={featureIndex}
+                              className={`flex items-center ${isRTL ? "space-x-reverse" : ""} space-x-2 text-sm text-muted-foreground transition-colors duration-300 group-hover:text-[#4b5563]`}
+                            >
+                              <span
+                                className="w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all duration-300 group-hover:scale-110"
+                                style={{ backgroundColor: "#B5040F" }}
+                              />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+
+                  {/* Brand-colored bottom bar that slides in on hover */}
+                  <div
+                    className="absolute left-0 bottom-0 h-1 w-0 group-hover:w-full transition-all duration-500"
+                    style={{ backgroundColor: "#B5040F" }}
+                    aria-hidden
+                  />
+                </Card>
+              </motion.div>
             );
           })}
         </div>
 
         <div className="text-center">
-          <Button asChild size="lg" className="px-8 bg-[#B5040F]">
+          <Button
+            asChild
+            size="lg"
+            className="px-8 bg-[#B5040F] hover:bg-[#a0030d] transition-colors"
+          >
             <Link href="/services">
               {t("viewAllServices")}
               <ArrowRight className={`h-4 w-4 ${isRTL ? "mr-2 rotate-180" : "ml-2"}`} />

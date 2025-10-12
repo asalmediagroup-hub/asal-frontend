@@ -4,6 +4,7 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { useGetPartnersReviewsQuery } from "@/slices/partnersReviewApi";
 import { useLanguage } from "@/components/language-provider";
 
@@ -167,10 +168,46 @@ async function trDynamic(
   }
 }
 
+/* ----------------------- Motion / Animation helpers ---------------------- */
+function throwInVariants(index: number) {
+  const rot = (index % 2 ? -1 : 1) * (index % 3 === 0 ? 6 : 4); // initial tilt
+  const xJitter = (index % 3) * (index % 2 ? -6 : 6);           // slight horizontal offset
+
+  return {
+    hidden: {
+      opacity: 0,
+      y: -72,
+      x: xJitter,
+      rotate: rot,
+      scale: 0.96,
+      filter: "blur(6px)",
+    },
+    visible: {
+      opacity: [0, 1, 1],
+      y: [-72, 8, 0],            // overshoot then settle
+      x: [xJitter, xJitter * 0.2, 0],
+      rotate: [rot, rot * 0.25, 0],
+      scale: [0.96, 1.005, 1],
+      filter: ["blur(6px)", "blur(1px)", "blur(0px)"],
+      transition: {
+        duration: 1,             // ← 4 seconds
+        ease: [0.22, 1, 0.36, 1],
+        times: [0, 0.85, 1],     // most motion early, gentle settle at the end
+      },
+    },
+  };
+}
+
+const listStagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
+};
+
 /* ------------------------------ Component ------------------------------ */
 export function TestimonialsSection() {
   const { data, isLoading, isError } = useGetPartnersReviewsQuery();
   const { t, translateText, isRTL, language } = useLanguage();
+  const prefersReducedMotion = useReducedMotion();
 
   const isArabic = language === "ar";
   const quoteStart = isArabic ? "«" : "“";
@@ -250,18 +287,29 @@ export function TestimonialsSection() {
   const dir = isRTL ? "rtl" : "ltr";
   const align = isRTL ? "text-right" : "text-left";
 
+  // Hover transform shared
+  const hoverTransform = prefersReducedMotion
+    ? {}
+    : { y: -6, rotate: 0.4, scale: 1.01 };
+
   return (
     <section className="py-24 bg-muted/30" dir={dir}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 space-y-4">
+        <motion.div
+          className="text-center mb-16 space-y-4"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.4 }}
+          transition={{ duration: 0.7 }}
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#B5040F]">
             {title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {description}
           </p>
-        </div>
+        </motion.div>
 
         {/* Skeletons */}
         {isLoading ? (
@@ -280,75 +328,105 @@ export function TestimonialsSection() {
             ))}
           </div>
         ) : !canSlide ? (
-          /* Grid (no slider) */
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          /* Grid (no slider) with throw-in & hover */
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.25 }}
+            variants={listStagger}
+          >
             {cards.map((t, i) => (
-              <Card
+              <motion.div
                 key={`${t.name}-${i}`}
-                className="relative overflow-hidden border border-border/50 rounded-2xl p-0 h-full"
+                className="relative"
+                variants={throwInVariants(i)}
+                whileHover={hoverTransform}
+                transition={{ type: "spring", stiffness: 300, damping: 24 }}
               >
-                <CardContent className={`p-6 md:p-8 space-y-6 h-full ${align}`}>
-                  {/* Decorative quotes (always shown) */}
-                  <div className={`absolute top-6 ${isRTL ? "left-6" : "right-6"} text-primary/20`}>
-                    <Quote className="h-8 w-8" />
-                  </div>
-                  <div className={`absolute bottom-6 ${isRTL ? "right-6" : "left-6"} text-primary/10 rotate-180`}>
-                    <Quote className="h-8 w-8" />
-                  </div>
-
-                  <StarRow rating={t.rating ?? 5} />
-                  <p className="text-card-foreground leading-relaxed italic">
-                    {quoteStart}{t.content}{quoteEnd}
-                  </p>
-                  <div className={`flex items-center ${isRTL ? "space-x-reverse" : ""} space-x-4 pt-4 border-t border-border/50`}>
-                    <img
-                      src={t.avatar || PLACEHOLDER}
-                      alt={t.name}
-                      className="w-12 h-12 rounded-full object-cover"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = PLACEHOLDER;
-                      }}
-                    />
-                    <div className={`${align}`}>
-                      <div className="font-semibold text-card-foreground">{t.name}</div>
-                      {t.roleCompany && (
-                        <div className="text-sm text-muted-foreground">{t.roleCompany}</div>
-                      )}
+                {/* Glow on hover */}
+                <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"
+                     style={{ boxShadow: "0 0 0 2px rgba(181,4,15,0.08), 0 18px 40px rgba(0,0,0,0.06)" }} />
+                <Card className="relative overflow-hidden border border-border/50 rounded-2xl p-0 h-full">
+                  <CardContent className={`p-6 md:p-8 space-y-6 h-full ${align}`}>
+                    {/* Decorative quotes */}
+                    <div className={`absolute top-6 ${isRTL ? "left-6" : "right-6"} text-primary/20`}>
+                      <Quote className="h-8 w-8" />
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                    <div className={`absolute bottom-6 ${isRTL ? "right-6" : "left-6"} text-primary/10 rotate-180`}>
+                      <Quote className="h-8 w-8" />
+                    </div>
+
+                    <StarRow rating={t.rating ?? 5} />
+                    <p className="text-card-foreground leading-relaxed italic">
+                      {isArabic ? "«" : "“"}
+                      {t.content}
+                      {isArabic ? "»" : "”"}
+                    </p>
+                    <div className={`flex items-center ${isRTL ? "space-x-reverse" : ""} space-x-4 pt-4 border-t border-border/50`}>
+                      <img
+                        src={t.avatar || PLACEHOLDER}
+                        alt={t.name}
+                        className="w-12 h-12 rounded-full object-cover"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = PLACEHOLDER;
+                        }}
+                      />
+                      <div className={`${align}`}>
+                        <div className="font-semibold text-card-foreground">{t.name}</div>
+                        {t.roleCompany && (
+                          <div className="text-sm text-muted-foreground">{t.roleCompany}</div>
+                        )}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         ) : (
-          /* Slider */
-          <div className="overflow-hidden">
+          /* Slider: each visible card still throws in & hovers */
+          <motion.div
+            className="overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.25 }}
+            variants={listStagger}
+          >
             <div
               className={`flex transition-transform duration-500 ease-in-out will-change-transform -mx-4 ${isRTL ? "flex-row-reverse" : ""}`}
               style={{ transform: `translateX(${translatePercent}%)` }}
             >
               {trackCards.map((t, i) => (
-                <div
+                <motion.div
                   key={`${t.name}-${i}`}
                   className="px-4"
                   style={{
                     flex: `0 0 ${cardWidthPercent}%`,
                     maxWidth: `${cardWidthPercent}%`,
                   }}
+                  variants={throwInVariants(i)}
+                  whileHover={hoverTransform}
+                  transition={{ type: "spring", stiffness: 300, damping: 24 }}
                 >
+                  {/* Glow on hover */}
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"
+                       style={{ boxShadow: "0 0 0 2px rgba(181,4,15,0.08), 0 18px 40px rgba(0,0,0,0.06)" }} />
                   <Card className="relative overflow-hidden border border-border/50 rounded-2xl p-0 h-full">
                     <CardContent className={`p-6 md:p-8 space-y-6 h-full ${align}`}>
-                      {/* Decorative quotes (always shown) */}
+                      {/* Decorative quotes */}
                       <div className={`absolute top-6 ${isRTL ? "left-6" : "right-6"} text-primary/20`}>
                         <Quote className="h-8 w-8" />
                       </div>
                       <div className={`absolute bottom-6 ${isRTL ? "right-6" : "left-6"} text-primary/10 rotate-180`}>
-                        {/* <Quote className="h-8 w-8" /> */}
+                        <Quote className="h-8 w-8" />
                       </div>
 
                       <StarRow rating={t.rating ?? 5} />
                       <p className="text-card-foreground leading-relaxed italic">
-                        {quoteStart}{t.content}{quoteEnd}
+                        {isArabic ? "«" : "“"}
+                        {t.content}
+                        {isArabic ? "»" : "”"}
                       </p>
                       <div className={`flex items-center ${isRTL ? "space-x-reverse" : ""} space-x-4 pt-4 border-t border-border/50`}>
                         <img
@@ -368,10 +446,10 @@ export function TestimonialsSection() {
                       </div>
                     </CardContent>
                   </Card>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* Prev / Next */}
