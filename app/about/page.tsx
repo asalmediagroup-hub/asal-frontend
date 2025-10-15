@@ -5,7 +5,7 @@ import { useLanguage } from "@/components/language-provider";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatedCounter } from "@/components/animated-counter";
-import { Users, Globe, Award, Zap } from "lucide-react";
+import { Users, Globe, Award, Zap, TrendingUp, ShieldCheck, Lightbulb } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
@@ -20,11 +20,13 @@ export default function AboutPage() {
   ];
 
   const values = [
-    { title: t("innovation"), description: t("innovationDesc"), icon: Zap },
-    { title: t("culturalBridge"), description: t("culturalBridgeDesc"), icon: Globe },
-    { title: t("excellence"), description: t("excellenceDesc"), icon: Award },
-    { title: t("community"), description: t("communityDesc"), icon: Users },
-  ];
+  { title: t("culturalIntegrity"), description: t("culturalIntegrityDesc"), icon: Globe },
+  { title: t("excellence"), description: t("excellenceDesc"), icon: Award },
+  { title: t("inclusivity"), description: t("inclusivityDesc"), icon: Users },
+  { title: t("empowerment"), description: t("empowermentDesc"), icon: TrendingUp },
+  { title: t("transparencyTrust"), description: t("transparencyTrustDesc"), icon: ShieldCheck },
+  { title: t("innovation"), description: t("innovationDesc"), icon: Lightbulb }
+];
 
   return (
     <>
@@ -97,7 +99,7 @@ export default function AboutPage() {
                 {t("valuesSubtitle")}
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {values.map((value, index) => {
                 const Icon = value.icon;
                 return (
@@ -114,162 +116,21 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Vision */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("visionTitle")}</h2>
+              <p className="text-xl text-muted-foreground mb-4">{t("visionP1")}</p>
+            </div>
+          </div>
+        </section>
         {/* Mission */}
         <section className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("missionTitle")}</h2>
               <p className="text-xl text-muted-foreground mb-4">{t("missionP1")}</p>
-              <p className="text-lg text-muted-foreground">{t("missionP2")}</p>
-            </div>
-
-            {/* Mission Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <div className="bg-white rounded-lg shadow p-6 text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-primary text-2xl font-bold">🌍</span>
-                </div>
-                <h3 className="font-semibold text-lg mb-2">
-                  {t("missionCardCulturalExchangeTitle")}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {t("missionCardCulturalExchangeDesc")}
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg shadow p-6 text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-primary text-2xl font-bold">💡</span>
-                </div>
-                <h3 className="font-semibold text-lg mb-2">
-                  {t("missionCardInnovationTitle")}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {t("missionCardInnovationDesc")}
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg shadow p-6 text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-primary text-2xl font-bold">🤝</span>
-                </div>
-                <h3 className="font-semibold text-lg mb-2">
-                  {t("missionCardCommunityTitle")}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {t("missionCardCommunityDesc")}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Leadership */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("leadershipTitle")}</h2>
-              <p className="text-lg text-muted-foreground mb-8">{t("leadershipSubtitle")}</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                <div className="bg-white rounded-lg shadow p-6">
-                  <div className="h-20 w-20 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-primary">
-                    AA
-                  </div>
-                  <h3 className="font-semibold text-lg mb-1">{t("leader1Name")}</h3>
-                  <p className="text-sm text-muted-foreground mb-2">{t("leader1Role")}</p>
-                  <p className="text-sm text-muted-foreground">{t("leader1Bio")}</p>
-                </div>
-
-                <div className="bg-white rounded-lg shadow p-6">
-                  <div className="h-20 w-20 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-primary">
-                    MH
-                  </div>
-                  <h3 className="font-semibold text-lg mb-1">{t("leader2Name")}</h3>
-                  <p className="text-sm text-muted-foreground mb-2">{t("leader2Role")}</p>
-                  <p className="text-sm text-muted-foreground">{t("leader2Bio")}</p>
-                </div>
-
-                <div className="bg-white rounded-lg shadow p-6">
-                  <div className="h-20 w-20 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-primary">
-                    FY
-                  </div>
-                  <h3 className="font-semibold text-lg mb-1">{t("leader3Name")}</h3>
-                  <p className="text-sm text-muted-foreground mb-2">{t("leader3Role")}</p>
-                  <p className="text-sm text-muted-foreground">{t("leader3Bio")}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Awards */}
-        <section className="py-20 bg-muted/30">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("awardsTitle")}</h2>
-              <p className="text-xl text-muted-foreground mb-8">{t("awardsSubtitle")}</p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {/* 1 */}
-              <div className="bg-white rounded-lg shadow p-6 text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-primary text-2xl font-bold">🏆</span>
-                </div>
-                <h3 className="font-semibold text-lg mb-2">{t("awardItem1Title")}</h3>
-                <p className="text-muted-foreground text-sm mb-2">{t("awardItem1Org")}</p>
-                <span className="text-primary font-semibold">{t("awardItem1Year")}</span>
-              </div>
-
-              {/* 2 */}
-              <div className="bg-white rounded-lg shadow p-6 text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-primary text-2xl font-bold">🥇</span>
-                </div>
-                <h3 className="font-semibold text-lg mb-2">{t("awardItem2Title")}</h3>
-                <p className="text-muted-foreground text-sm mb-2">{t("awardItem2Org")}</p>
-                <span className="text-primary font-semibold">{t("awardItem2Year")}</span>
-              </div>
-
-              {/* 3 */}
-              <div className="bg-white rounded-lg shadow p-6 text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-primary text-2xl font-bold">🌟</span>
-                </div>
-                <h3 className="font-semibold text-lg mb-2">{t("awardItem3Title")}</h3>
-                <p className="text-muted-foreground text-sm mb-2">{t("awardItem3Org")}</p>
-                <span className="text-primary font-semibold">{t("awardItem3Year")}</span>
-              </div>
-
-              {/* 4 */}
-              <div className="bg-white rounded-lg shadow p-6 text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-primary text-2xl font-bold">🎬</span>
-                </div>
-                <h3 className="font-semibold text-lg mb-2">{t("awardItem4Title")}</h3>
-                <p className="text-muted-foreground text-sm mb-2">{t("awardItem4Org")}</p>
-                <span className="text-primary font-semibold">{t("awardItem4Year")}</span>
-              </div>
-
-              {/* 5 */}
-              <div className="bg-white rounded-lg shadow p-6 text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-primary text-2xl font-bold">📺</span>
-                </div>
-                <h3 className="font-semibold text-lg mb-2">{t("awardItem5Title")}</h3>
-                <p className="text-muted-foreground text-sm mb-2">{t("awardItem5Org")}</p>
-                <span className="text-primary font-semibold">{t("awardItem5Year")}</span>
-              </div>
-
-              {/* 6 */}
-              <div className="bg-white rounded-lg shadow p-6 text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-primary text-2xl font-bold">🥈</span>
-                </div>
-                <h3 className="font-semibold text-lg mb-2">{t("awardItem6Title")}</h3>
-                <p className="text-muted-foreground text-sm mb-2">{t("awardItem6Org")}</p>
-                <span className="text-primary font-semibold">{t("awardItem6Year")}</span>
-              </div>
             </div>
           </div>
         </section>

@@ -323,6 +323,24 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.cta.callNow": "Call Now",
     "contact.cta.liveChat": "Live Chat",
 
+    "culturalIntegrity": "Cultural Integrity",
+  "culturalIntegrityDesc": "We honour and preserve Somali values, language, and identity in everything we create.",
+
+  "excellence": "Excellence",
+  "excellenceDesc": "We strive to deliver the highest quality in storytelling, journalism, and production.",
+
+  "inclusivity": "Inclusivity",
+  "inclusivityDesc": "We represent all voices—urban and rural, youth and elders, women and men, local and diaspora.",
+
+  "empowerment": "Empowerment",
+  "empowermentDesc": "We uplift Somali talent, ideas, and narratives that inspire pride and progress.",
+
+  "transparencyTrust": "Transparency & Trust",
+  "transparencyTrustDesc": "We build trust through accuracy, fairness, and honest storytelling.",
+
+  "innovation": "Innovation",
+  "innovationDesc": "We embrace technology and creativity to tell stories in fresh, engaging ways.",
+
     // Admin / News page
     newsPressTitle: "News & Press",
     newsPressSubtitle:
@@ -367,15 +385,9 @@ const translations: Record<Language, Record<string, string>> = {
       "Our journey began with Asal TV, bringing quality Somali programming to audiences across the globe. As we recognized the evolving needs of our community, we expanded our reach through Jiil Media for digital-native audiences, Masrax Production for premium content creation, and Nasiye Platform for on-demand streaming.",
     storyParagraph3:
       "Today, we stand as the leading media group in the region, committed to preserving cultural heritage while embracing technological innovation to serve our diverse, global audience.",
-    innovation: "Innovation",
-    innovationDesc:
-      "Pioneering new ways to connect audiences with compelling content across multiple platforms.",
-    culturalBridge: "Cultural Bridge",
+    culturalBridge: "Cultural Integrity",
     culturalBridgeDesc:
-      "Connecting Somali and East African communities worldwide through authentic storytelling.",
-    excellence: "Excellence",
-    excellenceDesc:
-      "Maintaining the highest standards in content creation, production, and audience engagement.",
+      "We honour and preserve Somali values, language, and identity in everything we create.",
     community: "Community",
     communityDesc:
       "Building strong relationships with our audiences and fostering meaningful connections.",
@@ -383,7 +395,7 @@ const translations: Record<Language, Record<string, string>> = {
       "The principles that guide everything we do at Asal Media Group",
     missionTitle: "Our Mission",
     missionP1:
-      "To inspire, inform, and connect communities through innovative media, storytelling, and cultural exchange.",
+      "ASAL TV creates authentic Somali content, empowers local talent, promote unity, and connects the global Somali audience through inclusive media and sustainable partnerships",
     missionP2:
       "We strive to be a bridge between cultures, empower voices, and deliver high-quality content that educates, entertains, and uplifts. Our mission is rooted in integrity, creativity, and a commitment to positive social impact.",
     missionCardCulturalExchangeTitle: "Cultural Exchange",
@@ -639,6 +651,8 @@ const translations: Record<Language, Record<string, string>> = {
     "nasiye.categories.downloads.title": "Downloads",
     "nasiye.categories.downloads.desc":
       "Save your favorite content for offline access.",
+    visionTitle:"Our Vision",
+    visionP1:"To be the most trusted and influential Somali media platform, connecting local and diaspora communities through inspiring, authentic, and culturally rich content."
 
     // Nasiye
     // downloadForIOS: "Download for iOS",
@@ -684,6 +698,24 @@ const translations: Record<Language, Record<string, string>> = {
     twentyFourSevenProgramming: "برمجة على مدار 24/7",
     testimonialsTile: "ماذا يقول شركاؤنا",
     testimonialsSubtitle: "استمع إلى آراء شركائنا حول تجربتهم في العمل معنا.",
+
+  "culturalIntegrity": "النزاهة الثقافية",
+  "culturalIntegrityDesc": "نُكرّم ونحافظ على القيم واللغة والهوية الصومالية في كل ما نُبدعه.",
+
+  "excellence": "التميّز",
+  "excellenceDesc": "نسعى لتقديم أعلى مستويات الجودة في السرد، والصحافة، والإنتاج.",
+
+  "inclusivity": "الشمولية",
+  "inclusivityDesc": "نمثل جميع الأصوات — في المدن والأرياف، الشباب وكبار السن، النساء والرجال، في الداخل والمهجر.",
+
+  "empowerment": "التمكين",
+  "empowermentDesc": "ننهض بالمواهب والأفكار والحكايات الصومالية التي تُلهم الفخر والتقدّم.",
+
+  "transparencyTrust": "الشفافية والثقة",
+  "transparencyTrustDesc": "نبني الثقة عبر الدقّة والإنصاف والسرد الصادق.",
+
+  "innovation": "الابتكار",
+  "innovationDesc": "نحتضن التكنولوجيا والإبداع لرواية القصص بطرق جديدة وجاذبة.",
 
 
     // Hero
@@ -1144,15 +1176,10 @@ const translations: Record<Language, Record<string, string>> = {
       "بدأت رحلتنا مع أسال تي في، مقدمين برامج صومالية عالية الجودة للجمهور العالمي. ومع تطور احتياجات مجتمعنا، وسّعنا انتشارنا عبر Jiil Media للجمهور الرقمي، وMasrax للإنتاج المميز، ومنصة ناسية للبث عند الطلب.",
     storyParagraph3:
       "نقف اليوم كأبرز مجموعة إعلامية في المنطقة، ملتزمين بالحفاظ على التراث الثقافي مع تبني الابتكار التقني لخدمة جمهورنا العالمي المتنوع.",
-    innovation: "الابتكار",
-    innovationDesc:
-      "ريادة أساليب جديدة لربط الجمهور بمحتوى جذاب عبر منصات متعددة.",
-    culturalBridge: "جسر ثقافي",
+    culturalBridge: "النزاهة الثقافية",
     culturalBridgeDesc:
-      "ربط المجتمعات الصومالية وشرق إفريقيا حول العالم من خلال سرد قصصي أصيل.",
-    excellence: "التميّز",
-    excellenceDesc:
-      "الحفاظ على أعلى المعايير في إنشاء المحتوى والإنتاج وتفاعل الجمهور.",
+    ".نحترم ونحافظ على القيم واللغة والهوية الصومالية في كل ما نقدّمه",
+
     community: "المجتمع",
     communityDesc:
       "بناء علاقات قوية مع جمهورنا وتعزيز الروابط الهادفة.",
@@ -1160,7 +1187,7 @@ const translations: Record<Language, Record<string, string>> = {
       "المبادئ التي توجه كل ما نقوم به في مجموعة أسال الإعلامية",
     missionTitle: "مهمتنا",
     missionP1:
-      "إلهام المجتمعات وإعلامها وربطها عبر وسائل إعلام مبتكرة وسرد قصصي وتبادل ثقافي.",
+      "إتُنتج ASAL TV محتوىً صومالياً أصيلاً، وتُمكّن المواهب المحلية، وتُعزّز الوحدة، وتربط الجمهور الصومالي حول العالم عبر إعلامٍ شامل وشراكاتٍ مستدامة.",
     missionP2:
       "نسعى لأن نكون جسرًا بين الثقافات، وتمكين الأصوات، وتقديم محتوى عالي الجودة يثقف ويُسلي ويرفع من شأن المجتمع. جذورنا في النزاهة والإبداع والأثر الاجتماعي الإيجابي.",
     missionCardCulturalExchangeTitle: "التبادل الثقافي",
@@ -1272,6 +1299,8 @@ const translations: Record<Language, Record<string, string>> = {
     yearsExperience: "سنوات خبرة",
     newsletterSubtitle:
       "اشترك في النشرة البريدية ولا تفوّت آخر الأخبار الإسلامية الصومالية من مجموعة أسال الإعلامية",
+    visionTitle:"رؤيتنا",
+    visionP1:"أن نكون المنصّة الإعلامية الصومالية الأكثر ثقةً وتأثيرًا، التي تصل بين المجتمعات في الداخل والمهجر من خلال محتوى مُلهِم، أصيل، وغنيّ ثقافيًا"
 
     // Nasiye
     // downloadForIOS: "تحميل لنظام iOS",
@@ -1577,6 +1606,24 @@ const translations: Record<Language, Record<string, string>> = {
     "faq.contact.callCta": "Wac 424",
     "faq.contact.whatsappTitle": "Chat ku fur WhatsApp",
 
+    "culturalIntegrity": "Daacadnimo Dhaqameed",
+  "culturalIntegrityDesc": "Waxaan maamuusnaa oo ilaalinnaa qiyamka, afka, iyo aqoonsiga Soomaaliyeed dhammaan waxa aan abuurno.",
+
+  "excellence": "Heer-Sare",
+  "excellenceDesc": "Waxaan ku dadaalnaa inaan bixino tayo ugu sarreysa sheeko-werinta, saxaafadda, iyo soo-saarka.",
+
+  "inclusivity": "Wada-Dhan",
+  "inclusivityDesc": "Waxaan metelnaa dhammaan codadka — magaalo iyo miyi, dhallinyaro iyo waayeel, haween iyo rag, gudaha iyo qurbo-joog.",
+
+  "empowerment": "Xoog-siin",
+  "empowermentDesc": "Waxaan kor u qaadnaa kartida, fikradaha, iyo sheekooyinka Soomaaliyeed ee abuura sharaf iyo horumar.",
+
+  "transparencyTrust": "Hufnaan & Aaminaad",
+  "transparencyTrustDesc": "Waxaan dhisnaa kalsooni annagoo adeegsanayna saxnaan, caddaalad, iyo sheeko-xogeed daacad ah.",
+
+  "innovation": "Hal-abuur",
+  "innovationDesc": "Waxaan qaabilnaa tignoolajiyada iyo hal-abuurka si aan ugu sheekayno siyaabo cusub oo soo jiidasho leh.",
+
     all: "Dhammaan",
     prev: "Hore",
     watchLive: "Daawo Toos",
@@ -1781,15 +1828,9 @@ const translations: Record<Language, Record<string, string>> = {
       "Socodkeenna waxa uu ka bilowday Asal TV, annagoo u keenayna barnaamijyo tayo leh oo Soomaali ah dhagaystayaal caalami ah. Markii aan aragnay baahiyaha bulshada, waanu ballaadhnay: Jiil Media oo loogu talagalay dhagaystayaasha dijitaalka ah, Masrax Production oo wax-soo-saar tayo sare leh, iyo madasha qulqulka Nasiye.",
     storyParagraph3:
       "Maanta waxaanu nahay kooxda warbaahinta ugu horeysa ee gobolka, annagoo ilaalinayna dhaxalka dhaqameed isla markaana qaadanayna tignoolajiyada casriga ah si aanu u adeegsanno dhagaystayaal badan oo kala duwan oo caalami ah.",
-    innovation: "Hal-abuurnimo",
-    innovationDesc:
-      "Hoggaaminta habab cusub oo lagu xiro dhagaystayaasha nuxur soo jiidasho leh madallo kala duwan.",
-    culturalBridge: "Buundada Dhaqanka",
+    culturalBridge: "Dhammaystir Dhaqameed",
     culturalBridgeDesc:
-      "Isku xiridda bulshada Soomaaliyeed iyo Bariga Afrika adigoo adeegsanaya sheekooyin dhab ah.",
-    excellence: "Heer Sare",
-    excellenceDesc:
-      "Ilaalinta heerarka ugu sarreeya ee abuurista nuxurka, soo saarista iyo ka-qaybgalka dhagaystayaasha.",
+      "Waxaan sharafnaa oo ilaalinnaa qiyamka, afka, iyo aqoonsiga Soomaaliyeed dhammaan waxa aan abuurno",
     community: "Bulsho",
     communityDesc:
       "Dhiska xiriirro xooggan oo lala yeesho dhagaystayaasha iyo kobcinta isku-xidhka wax-ku-oolka ah.",
@@ -1797,8 +1838,11 @@ const translations: Record<Language, Record<string, string>> = {
       "Qiyamka nagu hago wax kasta oo aan qabanno ee Asal Media Group",
     missionTitle: "Hadafkeenna",
     missionP1:
-      "Inaan dhiirigelinno, wargelinno oo aan isku xidhno bulshooyinka annagoo adeegsanayna warbaahin hal-abuurnimo leh, sheeko iyo is-dhaafsi dhaqan.",
-    missionP2:
+      "ASAL TV waxay soo saartaa nuxur Soomaali dhab ah, waxay dhiirrigelisaa kartida maxalliga ah, waxay kobcisaa midnimo, waxayna isku xirtaa bulshada Soomaaliyeed ee dunida dacalladeeda iyada oo loo marayo warbaahin loo wada dhan yahay iyo iskaashi waara.",
+    visionTitle:"Himiladeenna",
+    visionP1:"Inaan noqono madal warbaahineed Soomaaliyeed oo lagu kalsoonaan karo kana saamayn badan, oo isku xirta bulshada gudaha iyo qurbo-joogta, annagoo soo gudbinayna nuxur dhiirrigelin leh, dhab ah, hodan ku ah dhaqanka.",
+    
+      missionP2:
       "Waxaan dooneynaa inaan noqono buundada u dhexeysa dhaqamada, korna u qaadno codadka, aanna soo saarno nuxur tayo sare leh oo wax baro, maaweeliya oo dhiirrigeliya. Hadafkeenna waxa sal u ah daacadnimo, hal-abuurnimo iyo saameyn bulsho oo togan.",
     missionCardCulturalExchangeTitle: "Is-weydaarsi Dhaqameed",
     missionCardCulturalExchangeDesc:
