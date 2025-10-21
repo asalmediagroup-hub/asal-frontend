@@ -277,16 +277,6 @@ export default function JiilMediaPage() {
 									<p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">{heroDescription}</p>
 								</div>
 
-								<div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-									<Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg">
-										<Play className="h-5 w-5 mr-2" />
-										{t("watchContent")}
-									</Button>
-									<Button variant="outline" size="lg" className="px-8 py-6 text-lg bg-transparent">
-										{t("followUs")}
-									</Button>
-								</div>
-
 								{/* Static stats (labels localized via t) */}
 								<div className="grid grid-cols-3 gap-8 pt-12 border-t border-border/50">
 									{STATIC.stats.map((s, i) => (

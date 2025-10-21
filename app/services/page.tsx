@@ -390,9 +390,6 @@ export default function ServicesPage() {
                 {t("servicesPageTitle")}
               </h1>
               <p className="text-xl text-muted-foreground mb-8 text-pretty">{t("servicesPageSubtitle")}</p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                {t("getStarted")}
-              </Button>
             </div>
           </div>
         </section>

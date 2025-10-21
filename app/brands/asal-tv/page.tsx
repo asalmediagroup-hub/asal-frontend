@@ -279,21 +279,6 @@ export default function AsalTVStaticPage() {
 									</p>
 								</div>
 
-								{/* Static CTAs → localized */}
-								<div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-									<Button size="lg" className="px-8 py-6 text-lg">
-										<Play className="h-5 w-5 mr-2" />
-										{t("watchLive")}
-									</Button>
-									<Button
-										variant="outline"
-										size="lg"
-										className="px-8 py-6 text-lg bg-transparent"
-									>
-										{t("viewSchedule")}
-									</Button>
-								</div>
-
 								{/* Static stats → localized */}
 								<div className="grid grid-cols-3 gap-8 pt-12 border-t border-border/50">
 									<div className="text-center">

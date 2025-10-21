@@ -145,7 +145,7 @@ export function Header() {
               className="font-bold text-lg sm:text-xl hidden sm:block"
               style={{ color: "#B5040F" }}
             >
-              Asal Media Group
+              Asal Media Corporation
             </span>
           </Link>
 

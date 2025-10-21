@@ -42,14 +42,6 @@ export default function AboutPage() {
               <p className="text-xl text-muted-foreground mb-8 text-pretty">
                 {t("aboutSubtitle")}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
-                  {t("learnMore")}
-                </Button>
-                <Button size="lg" variant="outline">
-                  {t("contact")}
-                </Button>
-              </div>
             </div>
           </div>
         </section>
