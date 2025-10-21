@@ -9,7 +9,7 @@ import * as React from "react";
 type BrandCard = { id: number; image: string; name: string; color: string };
 
 const cardData: BrandCard[] = [
-  { id: 1, image: "/Asal Tv.jpg",    name: "Asal TV",    color: "#B5040F" },
+  { id: 1, image: "/Asal TV.jpg",    name: "Asal TV",    color: "#B5040F" },
   { id: 2, image: "/Jiil Media.jpg", name: "Jiil Media", color: "#0F6CAE" },
   { id: 3, image: "/Masrax Logo.jpg",name: "Masrax",     color: "#B80102" },
   { id: 4, image: "/Nasiye Logo.jpg",name: "Nasiye",     color: "#D42026" },
