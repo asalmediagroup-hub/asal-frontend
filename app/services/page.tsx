@@ -10,6 +10,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useGetServicesQuery } from "@/slices/serviceApi";
+import Link from "next/link";
 
 /* =========================================================
    Tiny in-memory cache to avoid re-translating same strings
@@ -459,9 +460,15 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("readyToStart")}</h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">{t("readyToStartSubtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary">
-                {t("contact")}
-              </Button>
+              <Link href="/contact" passHref>
+    <Button
+      size="lg"
+      variant="secondary"
+    >
+      {t("contact")}
+    </Button>
+  </Link>
+  <Link href="/portfolio" passHref>
               <Button
                 size="lg"
                 variant="outline"
@@ -469,6 +476,7 @@ export default function ServicesPage() {
               >
                 {t("viewPortfolio")}
               </Button>
+              </Link>
             </div>
           </div>
         </section>

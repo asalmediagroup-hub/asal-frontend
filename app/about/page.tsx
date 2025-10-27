@@ -8,6 +8,7 @@ import { AnimatedCounter } from "@/components/animated-counter";
 import { Users, Globe, Award, Zap, TrendingUp, ShieldCheck, Lightbulb } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import Link from "next/link";
 
 export default function AboutPage() {
   const { t } = useLanguage();
@@ -129,23 +130,22 @@ export default function AboutPage() {
 
         {/* CTA */}
         <section className="py-20 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("readyToJoin")}</h2>
-            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              {t("discoverOpportunities")}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary">
-                {t("careers")}
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-              >
-                {t("contact")}
-              </Button>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+<Link href="/careers" passHref>
+    <Button size="lg" variant="secondary">
+      {t("careers")}
+    </Button>
+  </Link>
+
+  <Link href="/contact" passHref>
+    <Button
+      size="lg"
+      variant="outline"
+      className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+    >
+      {t("contact")}
+    </Button>
+  </Link>
           </div>
         </section>
       </div>

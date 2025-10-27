@@ -121,6 +121,15 @@ export function Header() {
     { href: "/FAQs", label: labels.faqs },
   ];
 
+  const handleDownloadClick = () => {
+    window.open(
+      "https://play.google.com/store/apps/details?id=tv.nasiye.client&hl=en_US&pli=1",
+      "_blank",
+      "noopener,noreferrer",
+    )
+  }
+
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -270,7 +279,7 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button className="bg-[#B5040F] hover:bg-[#B5040F]/90 text-white" size="sm">
+            <Button onClick={handleDownloadClick} className="bg-[#B5040F] hover:bg-[#B5040F]/90 text-white" size="sm">
               <Download className="h-4 w-4 xl:mr-2" />
               <span className="hidden xl:inline">{labels.nasiye}</span>
             </Button>

@@ -253,6 +253,15 @@ export default function AsalTVStaticPage() {
 			.filter((it) => it.title);
 	}, [brand, isPublished]);
 
+
+	const handleDownloadClick = () => {
+    window.open(
+      "https://play.google.com/store/apps/details?id=tv.nasiye.client&hl=en_US&pli=1",
+      "_blank",
+      "noopener,noreferrer",
+    )
+  }
+
 	return (
 		<>
 			<Header />
@@ -389,6 +398,7 @@ export default function AsalTVStaticPage() {
 							</p>
 							<Button
 								size="lg"
+								onClick={handleDownloadClick}
 								className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg"
 							>
 								{t("downloadNasiyeApp")}

@@ -233,6 +233,15 @@ export default function MasraxProductionPage() {
 			.filter((it) => it.title);
 	}, [brand, isPublished]);
 
+
+	const handleDownloadClick = () => {
+    window.open(
+      "https://play.google.com/store/apps/details?id=tv.nasiye.client&hl=en_US&pli=1",
+      "_blank",
+      "noopener,noreferrer",
+    )
+  }
+
 	return (
 		<>
 			<Header />
@@ -349,7 +358,7 @@ export default function MasraxProductionPage() {
 							<p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
 								{t("masraxCtaSubtitle")}
 							</p>
-							<Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg">
+							<Button onClick={handleDownloadClick} size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg">
 								{t("downloadNasiyeApp")}
 								<ArrowRight className="h-4 w-4 ml-2" />
 							</Button>

@@ -270,41 +270,6 @@ export function BrandHighlights() {
               />
             ))}
           </motion.div>
-
-          {/* Nasiye Highlight */}
-          <motion.div
-            className="bg-gradient-to-r from-secondary/10 via-secondary/5 to-transparent rounded-2xl p-8 md:p-12 mt-12"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.35 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-3 mb-4">
-                <Smartphone className="h-8 w-8 text-secondary" />
-                <h3 className="text-2xl font-bold text-card-foreground">
-                  {ctas.featured}: {t("brandNasiyePlatformName")}
-                </h3>
-              </div>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {ctas.nasiyeHighlightDesc}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                  <Smartphone className="h-4 w-4 mr-2" />
-                  {ctas.downloadNow}
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="/brands/nasiye">
-                    {ctas.explorePlatform}
-                    <ArrowRight
-                      className={`h-4 w-4 ${isRTL ? "mr-2 rotate-180" : "ml-2"}`}
-                    />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </motion.section>

@@ -215,6 +215,24 @@ export default function NasiyePage() {
             .filter((r: any) => r.text);
     }, [isPublished, brand]);
 
+
+
+    const handleDownloadClick = () => {
+    window.open(
+      "https://play.google.com/store/apps/details?id=tv.nasiye.client&hl=en_US&pli=1",
+      "_blank",
+      "noopener,noreferrer",
+    )
+    }
+
+    const handleDownloadClick2 = () => {
+    window.open(
+      "https://apps.apple.com/us/app/nasiye/id6504266625",
+      "_blank",
+      "noopener,noreferrer",
+    )
+  }
+
     return (
         <>
             <Header />
@@ -253,13 +271,13 @@ export default function NasiyePage() {
 
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                     <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 0.6 }}>
-                                        <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg">
+                                        <Button onClick={handleDownloadClick2} size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg">
                                             <Download className="h-5 w-5 mr-2" />
                                             {t("downloadForIOS")}
                                         </Button>
                                     </motion.div>
                                     <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.0, duration: 0.6 }}>
-                                        <Button size="lg" variant="outline" className="px-8 py-6 text-lg bg-transparent">
+                                        <Button onClick={handleDownloadClick} size="lg" variant="outline" className="px-8 py-6 text-lg bg-transparent">
                                             <Smartphone className="h-5 w-5 mr-2" />
                                             {t("getOnAndroid")}
                                         </Button>
@@ -412,7 +430,7 @@ export default function NasiyePage() {
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                 <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.6 }}>
-                                    <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg">
+                                    <Button onClick={handleDownloadClick} size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg">
                                         <Download className="h-5 w-5 mr-2" />
                                         {t("downloadNow")}
                                     </Button>

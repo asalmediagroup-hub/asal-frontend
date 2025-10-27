@@ -17,6 +17,21 @@ export function Footer() {
   const year = new Date().getFullYear();
   const isRTL = language === "ar";
 
+  const handleDownloadClick = () => {
+    window.open(
+      "https://play.google.com/store/apps/details?id=tv.nasiye.client&hl=en_US&pli=1",
+      "_blank",
+      "noopener,noreferrer",
+    )
+  }
+  const handleDownloadClick2 = () => {
+    window.open(
+      "https://apps.apple.com/us/app/nasiye/id6504266625",
+      "_blank",
+      "noopener,noreferrer",
+    )
+  }
+
   return (
     <footer className="bg-card border-t" dir={isRTL ? "rtl" : "ltr"}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -30,7 +45,7 @@ export function Footer() {
                 className="h-8 w-8"
               />
               <span className="font-bold text-lg text-card-foreground">
-                Asal Media Group
+                Asal Media Corporation
               </span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -161,12 +176,13 @@ export function Footer() {
             <div className="space-y-2">
               <Button
                 className="w-full"
+                onClick={handleDownloadClick2}
                 style={{ backgroundColor: "#B5040F", color: "#fff" }}
               >
                 <Smartphone className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"}`} />
                 {t("appStore")}
               </Button>
-              <Button variant="outline" className="w-full bg-transparent">
+              <Button onClick={handleDownloadClick} variant="outline" className="w-full bg-transparent">
                 <Download className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"}`} />
                 {t("googlePlay")}
               </Button>
