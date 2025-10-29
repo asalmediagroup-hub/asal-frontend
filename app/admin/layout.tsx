@@ -31,6 +31,7 @@ import {
     Briefcase,
     SlidersHorizontal,
     Award,
+    Home
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -305,6 +306,7 @@ export type NavItem = {
 
 const NAV_ITEMS: NavItem[] = [
     { title: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
+    { title: "Home", href: "/admin/home", icon: Home },
     // {
     //     title: "Media",
     //     icon: ImageIcon,

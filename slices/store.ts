@@ -10,6 +10,7 @@ import { packageApi } from './packageApi';
 import { newsApi } from "./newsApi"
 import { portfolioApi } from "./portfolioApi"
 import { partnersReviewApi } from "./partnersReviewApi"
+import { homeApi } from "./homeApi"
 
 export const store = configureStore({
     reducer: {
@@ -23,6 +24,7 @@ export const store = configureStore({
         [partnersReviewApi.reducerPath]: partnersReviewApi.reducer,
         [newsApi.reducerPath]: newsApi.reducer,
         [portfolioApi.reducerPath]: portfolioApi.reducer,
+        [homeApi.reducerPath]: homeApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(
@@ -36,6 +38,7 @@ export const store = configureStore({
             portfolioApi.middleware,
             packageApi.middleware,
             partnersReviewApi.middleware,
+            homeApi.middleware,
         ),
     devTools: process.env.NODE_ENV !== 'production',
 });
