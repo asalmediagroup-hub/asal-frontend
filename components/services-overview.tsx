@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useLanguage } from "@/components/language-provider";
 import { motion, useReducedMotion } from "framer-motion";
 import * as React from "react";
+import { useGetHomesQuery } from "@/slices/homeApi";
 
 type ServiceItem = {
   title: string;
@@ -20,52 +21,65 @@ export function ServicesOverview() {
   const isRTL = language === "ar";
   const prefersReducedMotion = useReducedMotion();
 
-  const services: ServiceItem[] = [
-    {
-      title: t("serviceContentProduction"),
-      description: t("serviceContentProductionDesc"),
-      icon: Video,
-      features: [
-        t("preProductionPlanning"),
-        t("professionalFilming"),
-        t("postProductionEditing"),
-        t("distributionSupport"),
-      ],
-    },
-    {
-      title: t("serviceBroadcastingVOD"),
-      description: t("serviceBroadcastingVODDesc"),
-      icon: Broadcast,
-      features: [
-        t("liveTVBroadcasting"),
-        t("vodPlatformManagement"),
-        t("multiPlatformDistribution"),
-        t("audienceAnalytics"),
-      ],
-    },
-    {
-      title: t("serviceAdvertisingSolutions"),
-      description: t("serviceAdvertisingSolutionsDesc"),
-      icon: Megaphone,
-      features: [
-        t("mediaPlanning"),
-        t("creativeDevelopment"),
-        t("campaignManagement"),
-        t("performanceTracking"),
-      ],
-    },
-    {
-      title: t("serviceConsultingServices"),
-      description: t("serviceConsultingServicesDesc"),
-      icon: Users,
-      features: [
-        t("strategyDevelopment"),
-        t("marketAnalysis"),
-        t("brandPositioning"),
-        t("growthPlanning"),
-      ],
-    },
-  ];
+  // Fetch servicesPreview from home slice
+  const { data: homeList } = useGetHomesQuery?.() ?? { data: undefined };
+  const servicesPreview = homeList?.data?.[0]?.servicesPreview ?? [];
+
+  // Icons remain static in order
+  const staticIcons = [Video, Broadcast, Megaphone, Users];
+  const services: ServiceItem[] = servicesPreview.length
+    ? servicesPreview.slice(0, 4).map((svc: any, i: number) => ({
+      title: svc?.title ?? "",
+      description: svc?.description ?? "",
+      icon: staticIcons[i % staticIcons.length],
+      features: Array.isArray(svc?.keyServices) ? svc.keyServices : [],
+    }))
+    : [
+      {
+        title: t("serviceContentProduction"),
+        description: t("serviceContentProductionDesc"),
+        icon: Video,
+        features: [
+          t("preProductionPlanning"),
+          t("professionalFilming"),
+          t("postProductionEditing"),
+          t("distributionSupport"),
+        ],
+      },
+      {
+        title: t("serviceBroadcastingVOD"),
+        description: t("serviceBroadcastingVODDesc"),
+        icon: Broadcast,
+        features: [
+          t("liveTVBroadcasting"),
+          t("vodPlatformManagement"),
+          t("multiPlatformDistribution"),
+          t("audienceAnalytics"),
+        ],
+      },
+      {
+        title: t("serviceAdvertisingSolutions"),
+        description: t("serviceAdvertisingSolutionsDesc"),
+        icon: Megaphone,
+        features: [
+          t("mediaPlanning"),
+          t("creativeDevelopment"),
+          t("campaignManagement"),
+          t("performanceTracking"),
+        ],
+      },
+      {
+        title: t("serviceConsultingServices"),
+        description: t("serviceConsultingServicesDesc"),
+        icon: Users,
+        features: [
+          t("strategyDevelopment"),
+          t("marketAnalysis"),
+          t("brandPositioning"),
+          t("growthPlanning"),
+        ],
+      },
+    ];
 
   const hoverTilt = (rtl: boolean) =>
     prefersReducedMotion
@@ -79,7 +93,7 @@ export function ServicesOverview() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-[#B5040F]">
             {t("servicesPageTitle")}
           </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
             {t("servicesPageSubtitle")}
           </p>
         </div>
@@ -97,7 +111,7 @@ export function ServicesOverview() {
               >
                 {/* Soft brand glow ring on hover */}
                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                     style={{ boxShadow: "0 0 0 2px rgba(181,4,15,0.12), 0 12px 30px rgba(181,4,15,0.10)" }} />
+                  style={{ boxShadow: "0 0 0 2px rgba(181,4,15,0.12), 0 12px 30px rgba(181,4,15,0.10)" }} />
 
                 <Card
                   className="relative overflow-hidden rounded-2xl border border-transparent hover:border-[#B5040F1A] transition-all duration-300"

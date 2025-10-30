@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useGetHomesQuery } from "@/slices/homeApi";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Download, Globe, LogIn } from "lucide-react";
 import {
@@ -19,6 +20,22 @@ export function Header() {
   const [showMore, setShowMore] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(""); // which dropdown is open
   const [showHiddenMenus, setShowHiddenMenus] = useState(false); // "More..." hover state
+
+  // Home data (site name + logo)
+  const { data: homeList } = useGetHomesQuery?.() ?? { data: undefined };
+  const home = homeList?.data?.[0];
+  const siteName = home?.siteName || "Asal Media Corporation";
+  const siteNameShort = siteName?.split(" ")[0] || "Asal";
+  const resolveImageUrl = (src?: string | null): string => {
+    if (!src) return "/Logo Asal-03.svg";
+    const s = src.trim();
+    if (!s) return "/Logo Asal-03.svg";
+    if (s.startsWith("http://") || s.startsWith("https://") || s.startsWith("data:")) return s;
+    const base = process.env.NEXT_PUBLIC_API_IMAGE_URL || "";
+    if (s.startsWith("/")) return `${base}${s}`;
+    return `${base}/${s}`;
+  };
+  const logoSrc = resolveImageUrl(home?.logoImage) || "/Logo Asal-03.svg";
 
   // Language provider
   const { language, setLanguage, t } = useLanguage();
@@ -81,35 +98,35 @@ export function Header() {
   const mainMenu: Array<
     | { href: string; label: string }
     | {
-        href: string;
-        label: string;
-        dropdown: { href: string; label: string }[];
-      }
+      href: string;
+      label: string;
+      dropdown: { href: string; label: string }[];
+    }
   > = [
-    { href: "/", label: labels.home },
-    { href: "/about", label: labels.about },
-    { href: "/services", label: labels.services },
-    {
-      href: "/brands",
-      label: labels.brands,
-      dropdown: [
-        { href: "/brands/asal-tv", label: labels.brandAsalTV },
-        { href: "/brands/jiil-media", label: labels.brandJiil },
-        { href: "/brands/masrax-production", label: labels.brandMasrax },
-        { href: "/brands/nasiye", label: labels.brandNasiye },
-      ],
-    },
-    {
-      href: "/packages",
-      label: labels.packages,
-      dropdown: [
-        { href: "/packages/diini", label: labels.diini },
-        { href: "/packages/social", label: labels.social },
-        { href: "/packages/news", label: labels.news },
-        { href: "/packages/sports", label: labels.sports },
-      ],
-    },
-  ];
+      { href: "/", label: labels.home },
+      { href: "/about", label: labels.about },
+      { href: "/services", label: labels.services },
+      {
+        href: "/brands",
+        label: labels.brands,
+        dropdown: [
+          { href: "/brands/asal-tv", label: labels.brandAsalTV },
+          { href: "/brands/jiil-media", label: labels.brandJiil },
+          { href: "/brands/masrax-production", label: labels.brandMasrax },
+          { href: "/brands/nasiye", label: labels.brandNasiye },
+        ],
+      },
+      {
+        href: "/packages",
+        label: labels.packages,
+        dropdown: [
+          { href: "/packages/diini", label: labels.diini },
+          { href: "/packages/social", label: labels.social },
+          { href: "/packages/news", label: labels.news },
+          { href: "/packages/sports", label: labels.sports },
+        ],
+      },
+    ];
 
   // Hidden menus (for "More...")
   const hiddenMenus: { href: string; label: string }[] = [
@@ -136,33 +153,32 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0">
-            <Image
-              src="/Logo Asal-03.svg"
-              alt="Asal Media Group Logo"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={logoSrc}
+              alt={siteName}
               width={32}
               height={32}
               className="mr-0 md:mr-0 lg:mr-3"
-              priority
             />
             <span
               className="font-bold text-lg sm:text-xl hidden xs:block sm:hidden"
               style={{ color: "#B5040F" }}
             >
-              Asal
+              {siteNameShort}
             </span>
             <span
               className="font-bold text-lg sm:text-xl hidden sm:block"
               style={{ color: "#B5040F" }}
             >
-              Asal Media Corporation
+              {siteName}
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav
-            className={`hidden lg:flex items-center space-x-6 ${
-              isRTL ? "space-x-reverse" : ""
-            }`}
+            className={`hidden lg:flex items-center space-x-6 ${isRTL ? "space-x-reverse" : ""
+              }`}
           >
             {mainMenu.map((item, idx) =>
               "dropdown" in item ? (
@@ -213,9 +229,8 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="lg"
-                className={`px-4 py-2 text-center text-base ${
-                  showHiddenMenus || showMore ? "bg-muted" : ""
-                }`}
+                className={`px-4 py-2 text-center text-base ${showHiddenMenus || showMore ? "bg-muted" : ""
+                  }`}
                 tabIndex={0}
                 onClick={() =>
                   setShowMore((prev) => {
@@ -253,9 +268,8 @@ export function Header() {
 
           {/* Desktop: Language + Actions */}
           <div
-            className={`hidden lg:flex items-center space-x-3 xl:space-x-4 ${
-              isRTL ? "space-x-reverse" : ""
-            }`}
+            className={`hidden lg:flex items-center space-x-3 xl:space-x-4 ${isRTL ? "space-x-reverse" : ""
+              }`}
           >
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
