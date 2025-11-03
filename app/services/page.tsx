@@ -11,6 +11,7 @@ import { Footer } from "@/components/footer";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useGetServicesQuery } from "@/slices/serviceApi";
 import Link from "next/link";
+import { resolveImageUrl } from "@/lib/utils";
 
 /* =========================================================
    Tiny in-memory cache to avoid re-translating same strings
@@ -187,15 +188,6 @@ function Carousel<T>({
    Helpers
    ========= */
 
-// Resolve image URL: if relative (/uploads/...), prefix with BASE_URL; else pass through.
-function resolveImageUrl(src?: string | null): string {
-  if (!src || !src.trim()) return PLACEHOLDER;
-  const s = src.trim();
-  if (s.startsWith("http://") || s.startsWith("https://") || s.startsWith("data:")) return s;
-  // handle "/uploads/..." or "uploads/..."
-  if (s.startsWith("/")) return `${process.env.NEXT_PUBLIC_API_IMAGE_URL}${s}`;
-  return `${process.env.NEXT_PUBLIC_API_IMAGE_URL}/${s}`;
-}
 
 function SectionSkeleton() {
   const cards = Array.from({ length: 3 });
@@ -286,7 +278,7 @@ function ServiceCard({ service }: { service: any }) {
     };
   }, [service?.features, language, translateText]);
 
-  const imgSrc = resolveImageUrl(service?.image ?? null);
+  const imgSrc = resolveImageUrl(service?.image ?? null, PLACEHOLDER);
 
   return (
     <Card className="hover:shadow-lg transition-shadow overflow-hidden p-0">

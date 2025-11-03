@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useLanguage } from "@/components/language-provider";
 import type { Language } from "@/components/language-provider";
+import { resolveImageUrl } from "@/lib/utils";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,16 +27,7 @@ export function Header() {
   const home = homeList?.data?.[0];
   const siteName = home?.siteName || "Asal Media Corporation";
   const siteNameShort = siteName?.split(" ")[0] || "Asal";
-  const resolveImageUrl = (src?: string | null): string => {
-    if (!src) return "/Logo Asal-03.svg";
-    const s = src.trim();
-    if (!s) return "/Logo Asal-03.svg";
-    if (s.startsWith("http://") || s.startsWith("https://") || s.startsWith("data:")) return s;
-    const base = process.env.NEXT_PUBLIC_API_IMAGE_URL || "";
-    if (s.startsWith("/")) return `${base}${s}`;
-    return `${base}/${s}`;
-  };
-  const logoSrc = resolveImageUrl(home?.logoImage) || "/Logo Asal-03.svg";
+  const logoSrc = resolveImageUrl(home?.logoImage, "/Logo Asal-03.svg");
 
   // Language provider
   const { language, setLanguage, t } = useLanguage();

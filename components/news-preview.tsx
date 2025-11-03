@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useGetNewsQuery } from "@/slices/newsApi";
 import { useLanguage } from "@/components/language-provider";
+import { resolveImageUrl } from "@/lib/utils";
 
 /* ------------------------ Static fallback list ------------------------ */
 const FALLBACK_NEWS = [
@@ -48,18 +49,6 @@ function minutesFromText(text: string) {
   return Math.max(1, Math.round(words / 200)); // number (minutes)
 }
 
-// Robust image resolver: null/invalid → placeholder; relative → prefixed with env base
-function resolveImage(src: string | null | undefined) {
-  const s = (src || "").trim();
-  const isMissing = !s || s === "null" || s === "undefined" || s === "#" || s === "/";
-  if (isMissing || s.startsWith("placeholder") || s.startsWith("/placeholder")) return PLACEHOLDER;
-  if (/^(https?:)?\/\//i.test(s) || /^data:/i.test(s)) return s;
-  const base = (process.env.NEXT_PUBLIC_API_IMAGE_URL || "").trim();
-  if (!base) return PLACEHOLDER;
-  const cleanBase = base.endsWith("/") ? base.slice(0, -1) : base;
-  const path = s.startsWith("/") ? s : `/${s}`;
-  return `${cleanBase}${path}`;
-}
 
 // language → BCP-47 locale
 function langToLocale(lang: string | undefined) {
@@ -108,7 +97,7 @@ function mapApiToCards(payload: any) {
       date,
       readMinutes: minutesFromText(textForReadTime), // store as number; format later per language
       category: "News",
-      image: resolveImage(it?.image),
+      image: resolveImageUrl(it?.image, PLACEHOLDER),
     };
   });
 

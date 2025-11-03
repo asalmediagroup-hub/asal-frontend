@@ -7,6 +7,7 @@ import { useLanguage } from "@/components/language-provider"
 import { useState, useMemo } from "react"
 import { useGetHomesQuery } from "@/slices/homeApi"
 import { useTranslatedText } from "@/hooks/use-translated-content"
+import { resolveImageUrl } from "@/lib/utils"
 
 type BrandCard = { id: number; image: string; name: string; color: string }
 
@@ -14,19 +15,6 @@ type BrandCard = { id: number; image: string; name: string; color: string }
 const BRAND_COLORS = ["#B5040F", "#0F6CAE", "#B80102", "#D42026"]
 const BRAND_NAMES = ["Asal TV", "Jiil Media", "Masrax", "Nasiye"]
 
-// Helper function to resolve image URL
-function resolveImage(src: string | null | undefined): string {
-  const PLACEHOLDER = "/placeholder.svg"
-  const s = (src || "").trim()
-  const isMissing = !s || s === "null" || s === "undefined" || s === "#" || s === "/"
-  if (isMissing || s.startsWith("placeholder") || s.startsWith("/placeholder")) return PLACEHOLDER
-  if (/^(https?:)?\/\//i.test(s) || /^data:/i.test(s)) return s
-  const base = (process.env.NEXT_PUBLIC_API_IMAGE_URL || "").trim()
-  if (!base) return PLACEHOLDER
-  const cleanBase = base.endsWith("/") ? base.slice(0, -1) : base
-  const path = s.startsWith("/") ? s : `/${s}`
-  return `${cleanBase}${path}`
-}
 
 // Helper function to parse YouTube time parameter (handles formats like "8s", "8", "120", etc.)
 function parseYouTubeTime(timeStr: string | null): number {
@@ -112,7 +100,7 @@ export function HeroSection() {
     if (home?.brandsPreviewImage && Array.isArray(home.brandsPreviewImage) && home.brandsPreviewImage.length > 0) {
       return home.brandsPreviewImage.slice(0, 4).map((image, index) => ({
         id: index + 1,
-        image: resolveImage(image),
+        image: resolveImageUrl(image),
         name: BRAND_NAMES[index] || `Brand ${index + 1}`,
         color: BRAND_COLORS[index] || "#000000",
       }))
@@ -142,7 +130,7 @@ export function HeroSection() {
       return heroUrl
     }
     // Image URL - resolve with base URL if needed
-    return resolveImage(heroUrl)
+    return resolveImageUrl(heroUrl)
   }, [home?.hero])
 
   // Modal video URL (same as hero or separate)

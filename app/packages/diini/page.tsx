@@ -11,6 +11,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useGetPackagesQuery } from "@/slices/packageApi";
+import { resolveImageUrl } from "@/lib/utils";
 
 /* ------------------------------- Types ------------------------------- */
 type DbStory = {
@@ -131,23 +132,6 @@ const minutesFromText = (text: string) => {
   return `${Math.max(1, Math.round(words / 200))} min read`;
 };
 
-function resolveImage(src: string | null | undefined) {
-  const s = (src || "").trim();
-  const isMissing = !s || s === "null" || s === "undefined" || s === "#" || s === "/";
-  if (
-    isMissing ||
-    s === PLACEHOLDER ||
-    s.startsWith("/placeholder") ||
-    s.startsWith("placeholder")
-  )
-    return PLACEHOLDER;
-  if (/^(https?:)?\/\//i.test(s) || /^data:/i.test(s)) return s;
-  const base = (process.env.NEXT_PUBLIC_API_IMAGE_URL || "").trim();
-  if (!base) return PLACEHOLDER;
-  const cleanBase = base.endsWith("/") ? base.slice(0, -1) : base;
-  const path = s.startsWith("/") ? s : `/${s}`;
-  return `${cleanBase}${path}`;
-}
 
 function normalizeStories(item: DbItem | null | undefined) {
   if (
@@ -168,7 +152,7 @@ function normalizeStories(item: DbItem | null | undefined) {
     id: String(idx),
     title: (s.title || "").replaceAll('"', "").trim() || "Untitled",
     excerpt: (s.description || "").replaceAll('"', "").trim() || "",
-    image: resolveImage(s.image),
+      image: resolveImageUrl(s.image, PLACEHOLDER),
     category: s.category || "Religious",
     author: s.author || "Unknown",
     date: s.date || new Date().toISOString(),
@@ -245,7 +229,7 @@ function FeaturedStory({
             <div className="md:w-1/2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={resolveImage(story.image)}
+                src={resolveImageUrl(story.image, PLACEHOLDER)}
                 alt={title || "Featured"}
                 className="w-full h-64 md:h-full object-cover"
                 loading="lazy"
@@ -308,7 +292,7 @@ function ArticleCard({
       <div className="relative overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={resolveImage(article.image)}
+          src={resolveImageUrl(article.image, PLACEHOLDER)}
           alt={title || "Story"}
           className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
@@ -414,8 +398,8 @@ export default function DiiniPage() {
   const { description, stories } = normalizeStories(isError ? null : item);
 
   // featured + list
-  const featured = { ...stories[0], image: resolveImage(stories[0]?.image) };
-  const list = stories.map((s) => ({ ...s, image: resolveImage(s.image) }));
+  const featured = { ...stories[0], image: resolveImageUrl(stories[0]?.image, PLACEHOLDER) };
+  const list = stories.map((s) => ({ ...s, image: resolveImageUrl(s.image, PLACEHOLDER) }));
 
   // modal
   const [openModal, setOpenModal] = React.useState({ open: false, title: "", content: "" });

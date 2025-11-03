@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useGetPartnersReviewsQuery } from "@/slices/partnersReviewApi";
 import { useLanguage } from "@/components/language-provider";
+import { resolveImageUrl } from "@/lib/utils";
 
 /* ------------------------ Static fallback list ------------------------ */
 const FALLBACK_TITLE = "What Our Partners Say";
@@ -57,17 +58,6 @@ function clampStars(n: any) {
   return Math.max(0, Math.min(5, Math.round(num)));
 }
 
-function resolveImage(src?: string | null) {
-  const s = (src || "").trim();
-  const isMissing = !s || s === "null" || s === "undefined" || s === "#" || s === "/";
-  if (isMissing || s.startsWith("placeholder") || s.startsWith("/placeholder")) return PLACEHOLDER;
-  if (/^(https?:)?\/\//i.test(s) || /^data:/i.test(s)) return s;
-  const base = (process.env.NEXT_PUBLIC_API_IMAGE_URL || "").trim();
-  if (!base) return PLACEHOLDER;
-  const cleanBase = base.endsWith("/") ? base.slice(0, -1) : base;
-  const path = s.startsWith("/") ? s : `/${s}`;
-  return `${cleanBase}${path}`;
-}
 
 /* ---------------------------- API → UI map ---------------------------- */
 type ApiItem = {
@@ -105,7 +95,7 @@ function mapApiToTestimonials(payload: any) {
     roleCompany: (it?.title || "").trim(),
     content: (it?.message || "").trim(),
     rating: clampStars(it?.starsNo),
-    avatar: resolveImage(it?.image),
+    avatar: resolveImageUrl(it?.image, PLACEHOLDER),
   }));
 
   return { title, description, items: cards };

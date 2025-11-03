@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { useGetHomesQuery } from "@/slices/homeApi";
+import { resolveImageUrl } from "@/lib/utils";
 
 export function Footer() {
   const { t, language } = useLanguage();
@@ -22,16 +23,7 @@ export function Footer() {
   const { data: homeList } = useGetHomesQuery?.() ?? { data: undefined };
   const home = homeList?.data?.[0];
   const siteName = home?.siteName || "Asal Media Corporation";
-  const resolveImageUrl = (src?: string | null): string => {
-    if (!src) return "/Logo Asal-03.svg";
-    const s = src.trim();
-    if (!s) return "/Logo Asal-03.svg";
-    if (s.startsWith("http://") || s.startsWith("https://") || s.startsWith("data:")) return s;
-    const base = process.env.NEXT_PUBLIC_API_IMAGE_URL || "";
-    if (s.startsWith("/")) return `${base}${s}`;
-    return `${base}/${s}`;
-  };
-  const logoSrc = resolveImageUrl(home?.logoImage);
+  const logoSrc = resolveImageUrl(home?.logoImage, "/Logo Asal-03.svg");
 
   const handleDownloadClick = () => {
     window.open(
