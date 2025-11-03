@@ -337,13 +337,12 @@ export default function RecordModal({
                             </div>
 
                             {/* mode views */}
-                            {imageMode === "keep" && initial?.image && (
+                            {imageMode === "keep" && initial?.image && initial.image.length <= 200 && (
                                 <div className="rounded border p-3">
-                                    <div className="text-xs text-neutral-600 mb-2">Current image</div>
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
                                         src={initial.image}
-                                        alt="Current service image"
+                                        alt=""
                                         className="h-32 w-full rounded object-cover"
                                     />
                                 </div>
@@ -362,11 +361,10 @@ export default function RecordModal({
                                     />
                                     {(imgPreviewUrl || initial?.image) && (
                                         <div className="rounded border p-3">
-                                            <div className="text-xs text-neutral-600 mb-2">Preview</div>
                                             {/* eslint-disable-next-line @next/next/no-img-element */}
                                             <img
                                                 src={imgPreviewUrl || initial?.image || ""}
-                                                alt="Preview"
+                                                alt=""
                                                 className="h-32 w-full rounded object-cover"
                                             />
                                         </div>
@@ -382,13 +380,12 @@ export default function RecordModal({
                                         onChange={(e) => setImageUrl(e.target.value)}
                                         className="h-10"
                                     />
-                                    {imageUrl.trim() && (
+                                    {imageUrl.trim() && imageUrl.length <= 200 && (
                                         <div className="rounded border p-3">
-                                            <div className="text-xs text-neutral-600 mb-2">Preview</div>
                                             {/* eslint-disable-next-line @next/next/no-img-element */}
                                             <img
                                                 src={imageUrl}
-                                                alt="Preview"
+                                                alt=""
                                                 className="h-32 w-full rounded object-cover"
                                             />
                                         </div>

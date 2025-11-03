@@ -619,11 +619,10 @@ function ImageField({
                 </Button>
             </div>
 
-            {mode === "keep" && initialUrl && (
+            {mode === "keep" && initialUrl && initialUrl.length <= 200 && (
                 <div className="rounded border p-3">
-                    <div className="text-xs text-neutral-600 mb-2">Current image</div>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={initialUrl} alt="Current" className="h-32 w-full rounded object-cover" />
+                    <img src={initialUrl} alt="" className="h-32 w-full rounded object-cover" />
                 </div>
             )}
 
@@ -637,9 +636,8 @@ function ImageField({
                     />
                     {(previewUrl || initialUrl) && (
                         <div className="rounded border p-3">
-                            <div className="text-xs text-neutral-600 mb-2">Preview</div>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={previewUrl || initialUrl || ""} alt="Preview" className="h-32 w-full rounded object-cover" />
+                            <img src={previewUrl || initialUrl || ""} alt="" className="h-32 w-full rounded object-cover" />
                         </div>
                     )}
                 </div>
@@ -653,11 +651,10 @@ function ImageField({
                         onChange={(e) => setUrl(e.target.value)}
                         className="h-10 border border-neutral-300"
                     />
-                    {url.trim() && (
+                    {url.trim() && url.length <= 200 && (
                         <div className="rounded border p-3">
-                            <div className="text-xs text-neutral-600 mb-2">Preview</div>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={url} alt="Preview" className="h-32 w-full rounded object-cover" />
+                            <img src={url} alt="" className="h-32 w-full rounded object-cover" />
                         </div>
                     )}
                 </div>
@@ -722,7 +719,9 @@ function BrandsImageRepeater({
                     />
                     {typeof item === "string" && item && (
                         <div className="rounded border p-2">
-                            <div className="text-xs text-neutral-600 mb-1">Current: {item}</div>
+                            <div className="text-xs text-neutral-600 mb-1">
+                                Current: {item.length > 50 ? `${item.substring(0, 50)}...` : item}
+                            </div>
                             <Button
                                 type="button"
                                 variant="outline"

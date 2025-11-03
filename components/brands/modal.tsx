@@ -757,13 +757,12 @@ function ImageField({ label, controller }: { label: string; controller: ImageCon
                 </Button>
             </div>
 
-            {controller.mode === "keep" && controller.initialUrl && (
+            {controller.mode === "keep" && controller.initialUrl && controller.initialUrl.length <= 200 && (
                 <div className="rounded border p-3">
-                    <div className="text-xs text-neutral-600 mb-2">Current image</div>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         src={controller.initialUrl || "/placeholder.svg"}
-                        alt="Current"
+                        alt=""
                         className="h-32 w-full rounded object-cover"
                     />
                 </div>
@@ -804,9 +803,8 @@ function ImageField({ label, controller }: { label: string; controller: ImageCon
                     />
                     {preview && (
                         <div className="rounded border p-3">
-                            <div className="text-xs text-neutral-600 mb-2">Preview</div>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={preview || "/placeholder.svg"} alt="Preview" className="h-32 w-full rounded object-cover" />
+                            <img src={preview || "/placeholder.svg"} alt="" className="h-32 w-full rounded object-cover" />
                         </div>
                     )}
                 </div>
@@ -820,13 +818,12 @@ function ImageField({ label, controller }: { label: string; controller: ImageCon
                         onChange={(e) => controller.setUrlInput(e.target.value)}
                         className="h-10 border border-neutral-300"
                     />
-                    {controller.urlInput.trim() && (
+                    {controller.urlInput.trim() && controller.urlInput.length <= 200 && (
                         <div className="rounded border p-3">
-                            <div className="text-xs text-neutral-600 mb-2">Preview</div>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src={controller.urlInput || "/placeholder.svg"}
-                                alt="Preview"
+                                alt=""
                                 className="h-32 w-full rounded object-cover"
                             />
                         </div>
@@ -886,13 +883,12 @@ function FeaturedItemImageField({
                 </Button>
             </div>
 
-            {controller.mode === "keep" && controller.initialUrl && (
+            {controller.mode === "keep" && controller.initialUrl && controller.initialUrl.length <= 200 && (
                 <div className="rounded border p-3">
-                    <div className="text-xs text-neutral-600 mb-2">Current image</div>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         src={controller.initialUrl || "/placeholder.svg"}
-                        alt="Current"
+                        alt=""
                         className="h-32 w-full rounded object-cover"
                     />
                 </div>
@@ -912,7 +908,7 @@ function FeaturedItemImageField({
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src={controller.previewUrl || "/placeholder.svg"}
-                                alt="Preview"
+                                alt=""
                                 className="h-32 w-full rounded object-cover"
                             />
                         </div>
@@ -928,13 +924,12 @@ function FeaturedItemImageField({
                         onChange={(e) => controller.setUrlInput(e.target.value)}
                         className="h-10 border border-neutral-300"
                     />
-                    {controller.urlInput.trim() && (
+                    {controller.urlInput.trim() && controller.urlInput.length <= 200 && (
                         <div className="rounded border p-3">
-                            <div className="text-xs text-neutral-600 mb-2">Preview</div>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src={controller.urlInput || "/placeholder.svg"}
-                                alt="Preview"
+                                alt=""
                                 className="h-32 w-full rounded object-cover"
                             />
                         </div>
