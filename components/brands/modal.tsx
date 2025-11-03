@@ -514,7 +514,7 @@ export default function BrandModal({ open, onOpenChange, initial, onSave, onDele
                                                         <Field label="Image URL">
                                                             <Input
                                                                 className="h-10 border border-neutral-300"
-                                                                value={(item.image as string) ?? ""}
+                                                                value={(item.image as string) ? (typeof item.image === "string" && item.image.length > 100 ? "Image loaded (too long to display)" : item.image) : ""}
                                                                 onChange={(e) => update({ image: e.target.value })}
                                                                 placeholder="/uploads/... or https://..."
                                                             />
@@ -816,7 +816,7 @@ function ImageField({ label, controller }: { label: string; controller: ImageCon
                 <div className="space-y-2">
                     <Input
                         placeholder="https://example.com/image.jpg"
-                        value={controller.urlInput}
+                        value={controller.urlInput && controller.urlInput.length > 200 ? "Image loaded (too long to display - click to edit)" : controller.urlInput}
                         onChange={(e) => controller.setUrlInput(e.target.value)}
                         className="h-10 border border-neutral-300"
                     />
@@ -924,7 +924,7 @@ function FeaturedItemImageField({
                 <div className="space-y-2">
                     <Input
                         placeholder="https://example.com/image.jpg"
-                        value={controller.urlInput}
+                        value={controller.urlInput && controller.urlInput.length > 200 ? "Image loaded (too long to display - click to edit)" : controller.urlInput}
                         onChange={(e) => controller.setUrlInput(e.target.value)}
                         className="h-10 border border-neutral-300"
                     />

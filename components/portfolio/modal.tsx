@@ -456,7 +456,7 @@ function ItemImageField({
                 <div className="space-y-2">
                     <Input
                         placeholder="https://example.com/image.jpg"
-                        value={controller.urlInput}
+                        value={controller.urlInput && controller.urlInput.length > 200 ? "Image loaded (too long to display - click to edit)" : controller.urlInput}
                         onChange={(e) => controller.setUrlInput(e.target.value)}
                         className="h-10 border border-neutral-300"
                     />

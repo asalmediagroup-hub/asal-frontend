@@ -649,7 +649,7 @@ function ImageField({
                 <div className="space-y-2">
                     <Input
                         placeholder="https://example.com/image.jpg"
-                        value={url}
+                        value={url && url.length > 200 ? "Image loaded (too long to display - click to edit)" : url}
                         onChange={(e) => setUrl(e.target.value)}
                         className="h-10 border border-neutral-300"
                     />

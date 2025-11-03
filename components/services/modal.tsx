@@ -378,7 +378,7 @@ export default function RecordModal({
                                 <div className="space-y-2">
                                     <Input
                                         placeholder="https://example.com/image.jpg"
-                                        value={imageUrl}
+                                        value={imageUrl && imageUrl.length > 200 ? "Image loaded (too long to display - click to edit)" : imageUrl}
                                         onChange={(e) => setImageUrl(e.target.value)}
                                         className="h-10"
                                     />
