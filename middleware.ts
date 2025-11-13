@@ -9,6 +9,11 @@ export function middleware(request: NextRequest) {
     const isAdminDomain = host.includes('admin.asalmediacorp.com');
     const isMainDomain = host.includes('asalmediacorp.com') && !host.includes('admin.');
 
+    // Redirect root path on admin subdomain to /admin
+    if (isAdminDomain && pathname === '/') {
+        return NextResponse.redirect(new URL('/admin', request.url));
+    }
+
     // Block access to /auth/login and /admin routes on main domain (asalmediacorp.com)
     // Allow access on admin subdomain (admin.asalmediacorp.com)
     if (isMainDomain) {
