@@ -289,16 +289,6 @@ export function Header() {
               <Download className="h-4 w-4 xl:mr-2" />
               <span className="hidden xl:inline">{labels.nasiye}</span>
             </Button>
-
-            <Link href="/auth/login">
-              <Button
-                size="sm"
-                className="bg-primary hover:bg-[#B5040F] text-white border border-primary hover:border-[#B5040F] shadow-sm"
-              >
-                <LogIn className="h-4 w-4 xl:mr-2" />
-                <span className="hidden xl:inline">{labels.admin}</span>
-              </Button>
-            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -414,17 +404,10 @@ export function Header() {
 
                 {/* Action buttons (mobile) */}
                 <div className="flex gap-2">
-                  <Button className="bg-[#B5040F] hover:bg-[#B5040F]/90 text-white flex-1">
+                  <Button onClick={handleDownloadClick} className="bg-[#B5040F] hover:bg-[#B5040F]/90 text-white flex-1">
                     <Download className="h-4 w-4 mr-2" />
                     {labels.nasiye}
                   </Button>
-
-                  <Link href="/auth/login" className="flex-1">
-                    <Button className="w-full bg-primary hover:bg-[#B5040F] text-white border border-primary hover:border-[#B5040F] shadow-sm">
-                      <LogIn className="h-4 w-4 mr-2" />
-                      {labels.admin}
-                    </Button>
-                  </Link>
                 </div>
               </div>
             </nav>

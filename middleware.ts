@@ -4,7 +4,20 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
-    // Check if the path starts with /admin
+    // Detect domain from host header
+    const host = request.headers.get('host') || '';
+    const isAdminDomain = host.includes('admin.asalmediacorp.com');
+    const isMainDomain = host.includes('asalmediacorp.com') && !host.includes('admin.');
+
+    // Block access to /auth/login and /admin routes on main domain (asalmediacorp.com)
+    // Allow access on admin subdomain (admin.asalmediacorp.com)
+    if (isMainDomain) {
+        if (pathname.startsWith('/auth/login') || pathname.startsWith('/admin')) {
+            return new NextResponse('Page Not Found', { status: 404 });
+        }
+    }
+
+    // Check if the path starts with /admin (authentication check for allowed domains)
     if (pathname.startsWith('/admin')) {
         // Get the token from cookies
         const token = request.cookies.get('token')?.value;
