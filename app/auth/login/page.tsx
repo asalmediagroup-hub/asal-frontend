@@ -72,13 +72,6 @@ export default function AdminLoginPage() {
         <div className="relative min-h-screen w-full overflow-hidden bg-[radial-gradient(900px_500px_at_80%_-10%,#fde7e9_12%,transparent_60%),radial-gradient(700px_460px_at_20%_110%,#f6f7fb_10%,transparent_60%)]">
             <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] [background-size:22px_22px] opacity-40" />
 
-            <Link
-                href="/"
-                className="absolute top-6 left-6 z-30 inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-white/80 px-3 py-2 text-sm font-medium text-neutral-700 shadow-sm backdrop-blur transition-colors hover:text-[#B5040F]"
-            >
-                <ArrowLeft className="h-4 w-4" /> Back to Home
-            </Link>
-
             <div className="mx-auto flex min-h-screen w-full max-w-md items-center justify-center px-5 py-16">
                 <motion.div
                     initial={{ opacity: 0, y: 14 }}
