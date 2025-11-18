@@ -7,10 +7,10 @@ export const translations = {
     services: "Services",
     portfolio: "Portfolio",
     packages: "Packages",
-    Diini : "Religious",
+    Diini: "Religious",
     Social: "Social",
     News: "News",
-    Sports:"Sports",
+    Sports: "Sports",
     careers: "Careers",
     contact: "Contact",
 
@@ -63,7 +63,7 @@ export const translations = {
     rightsReserved: "All rights reserved.",
 
     // About Page
-    aboutTitle: "About Asal Media Group",
+    aboutTitle: "About Asal Media Corporation",
     aboutSubtitle: "Leading media innovation across East Africa",
     ourStory: "Our Story",
     ourValues: "Our Values",
@@ -73,7 +73,7 @@ export const translations = {
 
     // About page story content
     storyParagraph1:
-      "Founded with a vision to transform the media landscape in East Africa, Asal Media Group has grown from a single television channel to a comprehensive media ecosystem serving millions of viewers worldwide.",
+      "Founded with a vision to transform the media landscape in East Africa, Asal Media Corporation has grown from a single television channel to a comprehensive media ecosystem serving millions of viewers worldwide.",
     storyParagraph2:
       "Our journey began with Asal TV, bringing quality Somali programming to audiences across the globe. As we recognized the evolving needs of our community, we expanded our reach through Jiil Media for digital-native audiences, Masrax Production for premium content creation, and Nasiye Platform for on-demand streaming.",
     storyParagraph3:
@@ -88,7 +88,7 @@ export const translations = {
     excellenceDesc: "Maintaining the highest standards in content creation, production, and audience engagement.",
     community: "Community",
     communityDesc: "Building strong relationships with our audiences and fostering meaningful connections.",
-    valuesSubtitle: "The principles that guide everything we do at Asal Media Group",
+    valuesSubtitle: "The principles that guide everything we do at Asal Media Corporation",
 
     // Services Page
     servicesPageTitle: "Our Services",
@@ -153,7 +153,7 @@ export const translations = {
     Diini: "ديني",
     Social: "اجتماعي",
     News: "أخبار",
-    Sports:"رياضة",
+    Sports: "رياضة",
     careers: "الوظائف",
     contact: "اتصل بنا",
 
@@ -204,7 +204,7 @@ export const translations = {
     rightsReserved: "جميع الحقوق محفوظة.",
 
     // About Page
-    aboutTitle: "حول مجموعة أصل الإعلامية",
+    aboutTitle: "حول مجموعة أصل الإعلامية التجارية",
     aboutSubtitle: "رائدة الابتكار الإعلامي عبر شرق أفريقيا",
     ourStory: "قصتنا",
     ourValues: "قيمنا",
@@ -295,7 +295,7 @@ export const translations = {
     Social: "Bulsho",
     careers: "Shaqo",
     News: "Warar",
-    Sports:"Ciyaaraha",
+    Sports: "Ciyaaraha",
     contact: "Nala Soo Xiriir",
 
     // Hero Section

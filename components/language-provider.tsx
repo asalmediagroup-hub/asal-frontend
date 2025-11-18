@@ -324,22 +324,22 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.cta.liveChat": "Live Chat",
 
     "culturalIntegrity": "Cultural Integrity",
-  "culturalIntegrityDesc": "We honour and preserve Somali values, language, and identity in everything we create.",
+    "culturalIntegrityDesc": "We honour and preserve Somali values, language, and identity in everything we create.",
 
-  "excellence": "Excellence",
-  "excellenceDesc": "We strive to deliver the highest quality in storytelling, journalism, and production.",
+    "excellence": "Excellence",
+    "excellenceDesc": "We strive to deliver the highest quality in storytelling, journalism, and production.",
 
-  "inclusivity": "Inclusivity",
-  "inclusivityDesc": "We represent all voices—urban and rural, youth and elders, women and men, local and diaspora.",
+    "inclusivity": "Inclusivity",
+    "inclusivityDesc": "We represent all voices—urban and rural, youth and elders, women and men, local and diaspora.",
 
-  "empowerment": "Empowerment",
-  "empowermentDesc": "We uplift Somali talent, ideas, and narratives that inspire pride and progress.",
+    "empowerment": "Empowerment",
+    "empowermentDesc": "We uplift Somali talent, ideas, and narratives that inspire pride and progress.",
 
-  "transparencyTrust": "Transparency & Trust",
-  "transparencyTrustDesc": "We build trust through accuracy, fairness, and honest storytelling.",
+    "transparencyTrust": "Transparency & Trust",
+    "transparencyTrustDesc": "We build trust through accuracy, fairness, and honest storytelling.",
 
-  "innovation": "Innovation",
-  "innovationDesc": "We embrace technology and creativity to tell stories in fresh, engaging ways.",
+    "innovation": "Innovation",
+    "innovationDesc": "We embrace technology and creativity to tell stories in fresh, engaging ways.",
 
     // Admin / News page
     newsPressTitle: "News & Press",
@@ -372,7 +372,7 @@ const translations: Record<Language, Record<string, string>> = {
     monthlyViewers: "Monthly Viewers",
     countries: "Countries",
     contentHours: "Hours of Content",
-    aboutTitle: "About Asal Media Group",
+    aboutTitle: "About Asal Media Corporation",
     aboutSubtitle: "Leading media innovation across East Africa",
     ourStory: "Our Story",
     ourValues: "Our Values",
@@ -651,8 +651,8 @@ const translations: Record<Language, Record<string, string>> = {
     "nasiye.categories.downloads.title": "Downloads",
     "nasiye.categories.downloads.desc":
       "Save your favorite content for offline access.",
-    visionTitle:"Our Vision",
-    visionP1:"To be the most trusted and influential Somali media platform, connecting local and diaspora communities through inspiring, authentic, and culturally rich content."
+    visionTitle: "Our Vision",
+    visionP1: "To be the most trusted and influential Somali media platform, connecting local and diaspora communities through inspiring, authentic, and culturally rich content."
 
     // Nasiye
     // downloadForIOS: "Download for iOS",
@@ -699,23 +699,23 @@ const translations: Record<Language, Record<string, string>> = {
     testimonialsTile: "ماذا يقول شركاؤنا",
     testimonialsSubtitle: "استمع إلى آراء شركائنا حول تجربتهم في العمل معنا.",
 
-  "culturalIntegrity": "النزاهة الثقافية",
-  "culturalIntegrityDesc": "نُكرّم ونحافظ على القيم واللغة والهوية الصومالية في كل ما نُبدعه.",
+    "culturalIntegrity": "النزاهة الثقافية",
+    "culturalIntegrityDesc": "نُكرّم ونحافظ على القيم واللغة والهوية الصومالية في كل ما نُبدعه.",
 
-  "excellence": "التميّز",
-  "excellenceDesc": "نسعى لتقديم أعلى مستويات الجودة في السرد، والصحافة، والإنتاج.",
+    "excellence": "التميّز",
+    "excellenceDesc": "نسعى لتقديم أعلى مستويات الجودة في السرد، والصحافة، والإنتاج.",
 
-  "inclusivity": "الشمولية",
-  "inclusivityDesc": "نمثل جميع الأصوات — في المدن والأرياف، الشباب وكبار السن، النساء والرجال، في الداخل والمهجر.",
+    "inclusivity": "الشمولية",
+    "inclusivityDesc": "نمثل جميع الأصوات — في المدن والأرياف، الشباب وكبار السن، النساء والرجال، في الداخل والمهجر.",
 
-  "empowerment": "التمكين",
-  "empowermentDesc": "ننهض بالمواهب والأفكار والحكايات الصومالية التي تُلهم الفخر والتقدّم.",
+    "empowerment": "التمكين",
+    "empowermentDesc": "ننهض بالمواهب والأفكار والحكايات الصومالية التي تُلهم الفخر والتقدّم.",
 
-  "transparencyTrust": "الشفافية والثقة",
-  "transparencyTrustDesc": "نبني الثقة عبر الدقّة والإنصاف والسرد الصادق.",
+    "transparencyTrust": "الشفافية والثقة",
+    "transparencyTrustDesc": "نبني الثقة عبر الدقّة والإنصاف والسرد الصادق.",
 
-  "innovation": "الابتكار",
-  "innovationDesc": "نحتضن التكنولوجيا والإبداع لرواية القصص بطرق جديدة وجاذبة.",
+    "innovation": "الابتكار",
+    "innovationDesc": "نحتضن التكنولوجيا والإبداع لرواية القصص بطرق جديدة وجاذبة.",
 
 
     // Hero
@@ -1178,7 +1178,7 @@ const translations: Record<Language, Record<string, string>> = {
       "نقف اليوم كأبرز مجموعة إعلامية في المنطقة، ملتزمين بالحفاظ على التراث الثقافي مع تبني الابتكار التقني لخدمة جمهورنا العالمي المتنوع.",
     culturalBridge: "النزاهة الثقافية",
     culturalBridgeDesc:
-    ".نحترم ونحافظ على القيم واللغة والهوية الصومالية في كل ما نقدّمه",
+      ".نحترم ونحافظ على القيم واللغة والهوية الصومالية في كل ما نقدّمه",
 
     community: "المجتمع",
     communityDesc:
@@ -1299,8 +1299,8 @@ const translations: Record<Language, Record<string, string>> = {
     yearsExperience: "سنوات خبرة",
     newsletterSubtitle:
       "اشترك في النشرة البريدية ولا تفوّت آخر الأخبار الإسلامية الصومالية من مجموعة أسال الإعلامية",
-    visionTitle:"رؤيتنا",
-    visionP1:"أن نكون المنصّة الإعلامية الصومالية الأكثر ثقةً وتأثيرًا، التي تصل بين المجتمعات في الداخل والمهجر من خلال محتوى مُلهِم، أصيل، وغنيّ ثقافيًا"
+    visionTitle: "رؤيتنا",
+    visionP1: "أن نكون المنصّة الإعلامية الصومالية الأكثر ثقةً وتأثيرًا، التي تصل بين المجتمعات في الداخل والمهجر من خلال محتوى مُلهِم، أصيل، وغنيّ ثقافيًا"
 
     // Nasiye
     // downloadForIOS: "تحميل لنظام iOS",
@@ -1607,22 +1607,22 @@ const translations: Record<Language, Record<string, string>> = {
     "faq.contact.whatsappTitle": "Chat ku fur WhatsApp",
 
     "culturalIntegrity": "Daacadnimo Dhaqameed",
-  "culturalIntegrityDesc": "Waxaan maamuusnaa oo ilaalinnaa qiyamka, afka, iyo aqoonsiga Soomaaliyeed dhammaan waxa aan abuurno.",
+    "culturalIntegrityDesc": "Waxaan maamuusnaa oo ilaalinnaa qiyamka, afka, iyo aqoonsiga Soomaaliyeed dhammaan waxa aan abuurno.",
 
-  "excellence": "Heer-Sare",
-  "excellenceDesc": "Waxaan ku dadaalnaa inaan bixino tayo ugu sarreysa sheeko-werinta, saxaafadda, iyo soo-saarka.",
+    "excellence": "Heer-Sare",
+    "excellenceDesc": "Waxaan ku dadaalnaa inaan bixino tayo ugu sarreysa sheeko-werinta, saxaafadda, iyo soo-saarka.",
 
-  "inclusivity": "Wada-Dhan",
-  "inclusivityDesc": "Waxaan metelnaa dhammaan codadka — magaalo iyo miyi, dhallinyaro iyo waayeel, haween iyo rag, gudaha iyo qurbo-joog.",
+    "inclusivity": "Wada-Dhan",
+    "inclusivityDesc": "Waxaan metelnaa dhammaan codadka — magaalo iyo miyi, dhallinyaro iyo waayeel, haween iyo rag, gudaha iyo qurbo-joog.",
 
-  "empowerment": "Xoog-siin",
-  "empowermentDesc": "Waxaan kor u qaadnaa kartida, fikradaha, iyo sheekooyinka Soomaaliyeed ee abuura sharaf iyo horumar.",
+    "empowerment": "Xoog-siin",
+    "empowermentDesc": "Waxaan kor u qaadnaa kartida, fikradaha, iyo sheekooyinka Soomaaliyeed ee abuura sharaf iyo horumar.",
 
-  "transparencyTrust": "Hufnaan & Aaminaad",
-  "transparencyTrustDesc": "Waxaan dhisnaa kalsooni annagoo adeegsanayna saxnaan, caddaalad, iyo sheeko-xogeed daacad ah.",
+    "transparencyTrust": "Hufnaan & Aaminaad",
+    "transparencyTrustDesc": "Waxaan dhisnaa kalsooni annagoo adeegsanayna saxnaan, caddaalad, iyo sheeko-xogeed daacad ah.",
 
-  "innovation": "Hal-abuur",
-  "innovationDesc": "Waxaan qaabilnaa tignoolajiyada iyo hal-abuurka si aan ugu sheekayno siyaabo cusub oo soo jiidasho leh.",
+    "innovation": "Hal-abuur",
+    "innovationDesc": "Waxaan qaabilnaa tignoolajiyada iyo hal-abuurka si aan ugu sheekayno siyaabo cusub oo soo jiidasho leh.",
 
     all: "Dhammaan",
     prev: "Hore",
@@ -1839,10 +1839,10 @@ const translations: Record<Language, Record<string, string>> = {
     missionTitle: "Hadafkeenna",
     missionP1:
       "ASAL TV waxay soo saartaa nuxur Soomaali dhab ah, waxay dhiirrigelisaa kartida maxalliga ah, waxay kobcisaa midnimo, waxayna isku xirtaa bulshada Soomaaliyeed ee dunida dacalladeeda iyada oo loo marayo warbaahin loo wada dhan yahay iyo iskaashi waara.",
-    visionTitle:"Himiladeenna",
-    visionP1:"Inaan noqono madal warbaahineed Soomaaliyeed oo lagu kalsoonaan karo kana saamayn badan, oo isku xirta bulshada gudaha iyo qurbo-joogta, annagoo soo gudbinayna nuxur dhiirrigelin leh, dhab ah, hodan ku ah dhaqanka.",
-    
-      missionP2:
+    visionTitle: "Himiladeenna",
+    visionP1: "Inaan noqono madal warbaahineed Soomaaliyeed oo lagu kalsoonaan karo kana saamayn badan, oo isku xirta bulshada gudaha iyo qurbo-joogta, annagoo soo gudbinayna nuxur dhiirrigelin leh, dhab ah, hodan ku ah dhaqanka.",
+
+    missionP2:
       "Waxaan dooneynaa inaan noqono buundada u dhexeysa dhaqamada, korna u qaadno codadka, aanna soo saarno nuxur tayo sare leh oo wax baro, maaweeliya oo dhiirrigeliya. Hadafkeenna waxa sal u ah daacadnimo, hal-abuurnimo iyo saameyn bulsho oo togan.",
     missionCardCulturalExchangeTitle: "Is-weydaarsi Dhaqameed",
     missionCardCulturalExchangeDesc:

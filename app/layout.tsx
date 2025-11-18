@@ -7,6 +7,7 @@ import "./globals.css";
 
 import { LanguageProvider } from "@/components/language-provider";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import { ReduxProvider } from "@/components/redux-provider";
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({
           <LanguageProvider>
             <main className="min-h-screen">{children}</main>
             <ScrollToTop />
+            <WhatsAppButton />
           </LanguageProvider>
         </ReduxProvider>
       </body>
