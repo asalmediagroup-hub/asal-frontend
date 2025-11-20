@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -28,11 +28,7 @@ export default function AdminLoginPage() {
     const [showAlert, setShowAlert] = useState(false);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
     const router = useRouter();
-    const searchParams = useSearchParams();
     const [login] = useLoginMutation();
-
-    // Get redirect path from URL params
-    const redirectPath = searchParams.get('redirect') || '/admin/users';
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -42,7 +38,7 @@ export default function AdminLoginPage() {
             const res = await login({ email, password }).unwrap();
             console.log("res", res);
             if (res?.token) {
-                router.push(redirectPath);
+                router.push('/admin/users');
             } else {
                 setError("Invalid response from server.");
             }

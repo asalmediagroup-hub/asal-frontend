@@ -104,12 +104,12 @@ export default function ContactPage() {
   ]
 
   const socialLinks = [
-    { platform: t("contact.social.facebook"), url: "https://facebook.com/asalmediagroup", followers: "2.5M" },
+    { platform: t("contact.social.facebook"), url: "https://www.facebook.com/asaltv.so", followers: "2.5M" },
     { platform: t("contact.social.twitter"), url: "https://twitter.com/asalmediagroup", followers: "1.8M" },
-    { platform: t("contact.social.instagram"), url: "https://instagram.com/asalmediagroup", followers: "3.2M" },
-    { platform: t("contact.social.linkedin"), url: "https://linkedin.com/company/asalmediagroup", followers: "500K" },
-    { platform: t("contact.social.youtube"), url: "https://youtube.com/asalmediagroup", followers: "4.1M" },
-    { platform: t("contact.social.tiktok"), url: "https://tiktok.com/@asalmediagroup", followers: "2.8M" },
+    { platform: t("contact.social.instagram"), url: "https://www.instagram.com/asaltv.so/", followers: "3.2M" },
+    { platform: t("contact.social.linkedin"), url: "https://www.linkedin.com/company/asaltv-so/", followers: "500K" },
+    { platform: t("contact.social.youtube"), url: "https://www.youtube.com/@asaltvso", followers: "4.1M" },
+    { platform: t("contact.social.tiktok"), url: "https://www.tiktok.com/@asaltv.so", followers: "2.8M" },
   ]
 
   return (

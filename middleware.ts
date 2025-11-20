@@ -27,11 +27,19 @@ export function middleware(request: NextRequest) {
         // Get the token from cookies
         const token = request.cookies.get('token')?.value;
 
-        // If no token, redirect to login
+        // Special handling for /admin path
+        if (pathname === '/admin') {
+            // If no token, redirect to login
+            if (!token) {
+                return NextResponse.redirect(new URL('/auth/login', request.url));
+            }
+            // If logged in, always redirect to /admin/users
+            return NextResponse.redirect(new URL('/admin/users', request.url));
+        }
+
+        // For other /admin/* paths, check authentication
         if (!token) {
             const loginUrl = new URL('/auth/login', request.url);
-            // Add the current path as a redirect parameter
-            loginUrl.searchParams.set('redirect', pathname);
             return NextResponse.redirect(loginUrl);
         }
     }

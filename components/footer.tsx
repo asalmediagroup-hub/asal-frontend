@@ -65,6 +65,7 @@ export function Footer() {
                 size="icon"
                 className="text-muted-foreground hover:text-card-foreground"
                 aria-label="Facebook"
+                onClick={() => window.open("https://www.facebook.com/asaltv.so", "_blank", "noopener,noreferrer")}
               >
                 <Facebook className="h-5 w-5" />
               </Button>
@@ -81,6 +82,7 @@ export function Footer() {
                 size="icon"
                 className="text-muted-foreground hover:text-card-foreground"
                 aria-label="Instagram"
+                onClick={() => window.open("https://www.instagram.com/asaltv.so/", "_blank", "noopener,noreferrer")}
               >
                 <Instagram className="h-5 w-5" />
               </Button>
@@ -89,6 +91,7 @@ export function Footer() {
                 size="icon"
                 className="text-muted-foreground hover:text-card-foreground"
                 aria-label="YouTube"
+                onClick={() => window.open("https://www.youtube.com/@asaltvso", "_blank", "noopener,noreferrer")}
               >
                 <Youtube className="h-5 w-5" />
               </Button>
