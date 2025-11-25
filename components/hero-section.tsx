@@ -165,7 +165,7 @@ export function HeroSection() {
 
   const handleDownloadClick = () => {
     window.open(
-      "https://play.google.com/store/apps/details?id=tv.nasiye.client&hl=en_US&pli=1",
+      "http://nasiye.com/app",
       "_blank",
       "noopener,noreferrer",
     )
