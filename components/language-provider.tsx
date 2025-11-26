@@ -74,21 +74,21 @@ const translations: Record<Language, Record<string, string>> = {
     // --- Brand Highlights ---
     brandsSectionTitleOur: "Our",
     brandsSectionTitleMedia: "Media",
-    brandsSectionTitleBrands: "Brands",
+    brandsSectionTitleBrands: "Networks",
     brandsSectionSubtitle:
-      "Four distinct brands, one unified vision. Discover how each of our media properties serves different audiences while maintaining our commitment to quality content.",
+      "A unified media network serving millions with trusted, high-quality content.",
     brandAsalTVName: "Asal TV",
     brandAsalTVDesc:
-      "Premium television content with award-winning shows, news, and entertainment programming.",
+      "Premium television crafted with high-quality Somali content, entertainment, and original programming. ",
     brandJiilMediaName: "Jiil Media",
     brandJiilMediaDesc:
-      "Digital-first media platform targeting young audiences with innovative content and formats.",
+      "Digital-first media platform creating innovative content for today’s young audience.",
     brandMasraxProductionName: "Masrax Production",
     brandMasraxProductionDesc:
-      "Full-service production house creating compelling stories for film, TV, and digital platforms.",
+      "A full-service production house delivering high-quality film, TV, and high- quality corporate advertising videos.",
     brandNasiyePlatformName: "Nasiye Platform",
     brandNasiyePlatformDesc:
-      "Revolutionary streaming platform bringing premium content directly to your mobile device.",
+      "A premium streaming platform offering Somali films, global movies, series, and live channels.",
     explorePlatform: "Explore Platform",
     nasiyeHighlightDesc:
       "Experience the future of mobile entertainment with Nasiye. Our flagship streaming platform offers exclusive content, live TV, and on-demand shows optimized for mobile viewing.",
@@ -112,18 +112,18 @@ const translations: Record<Language, Record<string, string>> = {
     readyToStartSubtitle:
       "Let's discuss how we can bring your vision to life with our comprehensive media services",
     noServicesFound: "No services found.",
-    consultation: "Consultation",
-    consultationDesc:
-      "We start with understanding your vision, goals, and target audience to create the perfect strategy.",
-    planning: "Planning",
-    planningDesc:
-      "Our team develops a comprehensive production plan with timelines, resources, and creative direction.",
-    production: "Production",
-    productionDesc:
-      "Professional execution using state-of-the-art equipment and experienced production crews.",
-    delivery: "Delivery",
-    deliveryDesc:
-      "Final content delivery with ongoing support and performance monitoring for optimal results.",
+    discover: "Discover",
+    discoverDesc: "Understand your needs",
+    design: "Design",
+    designDesc: "Build the right strategy",
+    create: "Create",
+    createDesc: "Produce high-quality content",
+    approve: "Approve",
+    approveDesc: "Refine and finalize",
+    publish: "Publish",
+    publishDesc: "Distribute across platforms",
+    support: "Support",
+    supportDesc: "Monitor performance",
     viewAllServices: "View All Services",
     latest: "Latest News",
     sub: "Stay updated with the latest developments, achievements, and announcements from Asal Media Group and our brand portfolio.",
@@ -373,18 +373,18 @@ const translations: Record<Language, Record<string, string>> = {
     countries: "Countries",
     contentHours: "Hours of Content",
     aboutTitle: "About Asal Media Corporation",
-    aboutSubtitle: "Leading media innovation across East Africa",
+    aboutSubtitle: "Connecting communities through powerful content.",
     ourStory: "Our Story",
     ourValues: "Our Values",
     readyToJoin: "Ready to Join Our Journey?",
     discoverOpportunities:
       "Discover opportunities to be part of the future of media in East Africa",
     storyParagraph1:
-      "Founded with a vision to transform the media landscape in East Africa, Asal Media Group has grown from a single television channel to a comprehensive media ecosystem serving millions of viewers worldwide.",
+      "Asal Media Corporation is a leading media production and broadcasting company headquartered in Mogadishu, Somalia.",
     storyParagraph2:
-      "Our journey began with Asal TV, bringing quality Somali programming to audiences across the globe. As we recognized the evolving needs of our community, we expanded our reach through Jiil Media for digital-native audiences, Masrax Production for premium content creation, and Nasiye Platform for on-demand streaming.",
+      "Through our mission, Asal Media Corporation delivers multi-platform content and communication solutions tailored to the evolving needs of Somali audiences. Our diverse services span broadcasting, film production, event coverage, advertising, and digital media, ensuring a complete ecosystem of creative and communication excellence.",
     storyParagraph3:
-      "Today, we stand as the leading media group in the region, committed to preserving cultural heritage while embracing technological innovation to serve our diverse, global audience.",
+      "through Asal TV and Nasiye IPTV, Masrax Productions, Jiil Media, Nasiye App and digital media, Asal Media operates an integrated portfolio of brands dedicated to informing, entertaining, and inspiring Somali communities both locally and globally.",
     culturalBridge: "Cultural Integrity",
     culturalBridgeDesc:
       "We honour and preserve Somali values, language, and identity in everything we create.",
@@ -393,9 +393,9 @@ const translations: Record<Language, Record<string, string>> = {
       "Building strong relationships with our audiences and fostering meaningful connections.",
     valuesSubtitle:
       "The principles that guide everything we do at Asal Media Group",
-    missionTitle: "Our Mission",
+    missionTitle: "Mission",
     missionP1:
-      "ASAL TV creates authentic Somali content, empowers local talent, promote unity, and connects the global Somali audience through inclusive media and sustainable partnerships",
+      "To create authentic Somali content, empower local talent, promote unity, and connect the global Somali audience through inclusive media and sustainable partnerships.",
     missionP2:
       "We strive to be a bridge between cultures, empower voices, and deliver high-quality content that educates, entertains, and uplifts. Our mission is rooted in integrity, creativity, and a commitment to positive social impact.",
     missionCardCulturalExchangeTitle: "Cultural Exchange",
@@ -651,7 +651,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nasiye.categories.downloads.title": "Downloads",
     "nasiye.categories.downloads.desc":
       "Save your favorite content for offline access.",
-    visionTitle: "Our Vision",
+    visionTitle: "Vision",
     visionP1: "To be the most trusted and influential Somali media platform, connecting local and diaspora communities through inspiring, authentic, and culturally rich content."
 
     // Nasiye
@@ -1025,7 +1025,7 @@ const translations: Record<Language, Record<string, string>> = {
     // --- Brand Highlights ---
     brandsSectionTitleOur: "علاماتنا",
     brandsSectionTitleMedia: "الإعلامية",
-    brandsSectionTitleBrands: "",
+    brandsSectionTitleBrands: "كياگا",
     brandsSectionSubtitle:
       "أربع علامات مميزة، رؤية واحدة موحّدة. اكتشف كيف تخدم كل علامة جمهورًا مختلفًا مع الحفاظ على التزامنا بالمحتوى عالي الجودة.",
     brandAsalTVName: "أصل تي في",
@@ -1063,18 +1063,18 @@ const translations: Record<Language, Record<string, string>> = {
     readyToStartSubtitle:
       "دعنا نناقش كيف يمكننا تحقيق رؤيتك بخدماتنا الإعلامية الشاملة",
     noServicesFound: "لم يتم العثور على خدمات.",
-    consultation: "استشارة",
-    consultationDesc:
-      "نبدأ بفهم رؤيتك وأهدافك والجمهور المستهدف لإنشاء الاستراتيجية المثالية.",
-    planning: "التخطيط",
-    planningDesc:
-      "يقوم فريقنا بتطوير خطة إنتاج شاملة مع الجداول الزمنية والموارد والتوجيه الإبداعي.",
-    production: "الإنتاج",
-    productionDesc:
-      "تنفيذ احترافي باستخدام أحدث المعدات وطواقم الإنتاج ذات الخبرة.",
-    delivery: "التسليم",
-    deliveryDesc:
-      "تسليم المحتوى النهائي مع الدعم المستمر ومراقبة الأداء للحصول على أفضل النتائج.",
+    discover: "اكتشف",
+    discoverDesc: "فهم احتياجاتك",
+    design: "تصميم",
+    designDesc: "بناء الاستراتيجية الصحيحة",
+    create: "إنشاء",
+    createDesc: "إنتاج محتوى عالي الجودة",
+    approve: "الموافقة",
+    approveDesc: "تحسين وإنهاء",
+    publish: "نشر",
+    publishDesc: "التوزيع عبر المنصات",
+    support: "الدعم",
+    supportDesc: "مراقبة الأداء",
     viewAllServices: "عرض جميع الخدمات",
 
     // ServicesOverview
@@ -1163,19 +1163,19 @@ const translations: Record<Language, Record<string, string>> = {
     monthlyViewers: "مشاهدون شهريًا",
     countries: "دول",
     contentHours: "ساعات من المحتوى",
-    aboutTitle: "نبذة عن مجموعة أسال الإعلامية",
-    aboutSubtitle: "الريادة في ابتكار الإعلام عبر شرق إفريقيا",
+    aboutTitle: "حول شركة أصل للإعلام",
+    aboutSubtitle: "ربط المجتمعات من خلال المحتوى القوي.",
     ourStory: "قصتنا",
     ourValues: "قيمنا",
     readyToJoin: "هل أنت مستعد للانضمام إلى رحلتنا؟",
     discoverOpportunities:
       "اكتشف الفرص لتكون جزءًا من مستقبل الإعلام في شرق إفريقيا",
     storyParagraph1:
-      "انطلقت مجموعة أسال الإعلامية برؤية لتغيير مشهد الإعلام في شرق إفريقيا، ونمت من قناة تلفزيونية واحدة إلى منظومة إعلامية متكاملة تخدم الملايين حول العالم.",
+      "شركة أصل للإعلام هي شركة رائدة في إنتاج وبث المحتوى الإعلامي، ومقرها الرئيسي في مقديشو، الصومال.",
     storyParagraph2:
-      "بدأت رحلتنا مع أسال تي في، مقدمين برامج صومالية عالية الجودة للجمهور العالمي. ومع تطور احتياجات مجتمعنا، وسّعنا انتشارنا عبر Jiil Media للجمهور الرقمي، وMasrax للإنتاج المميز، ومنصة ناسية للبث عند الطلب.",
+      "من خلال مهمتنا، تقدم شركة أصل للإعلام محتوى متعدد المنصات وحلول اتصال مصممة خصيصًا للاحتياجات المتطورة للجماهير الصومالية. تمتد خدماتنا المتنوعة عبر البث، وإنتاج الأفلام، وتغطية الأحداث، والإعلان، والإعلام الرقمي، مما يضمن نظامًا بيئيًا كاملاً للإبداع والتميز في الاتصال.",
     storyParagraph3:
-      "نقف اليوم كأبرز مجموعة إعلامية في المنطقة، ملتزمين بالحفاظ على التراث الثقافي مع تبني الابتكار التقني لخدمة جمهورنا العالمي المتنوع.",
+      "من خلال تلفزيون أصل وناسية IPTV، وإنتاجات مسرح، وإعلام جيل، وتطبيق ناسية والإعلام الرقمي، تعمل أصل للإعلام على محفظة متكاملة من العلامات التجارية المكرسة لإعلام وترفيه وإلهام المجتمعات الصومالية محليًا وعالميًا.",
     culturalBridge: "النزاهة الثقافية",
     culturalBridgeDesc:
       ".نحترم ونحافظ على القيم واللغة والهوية الصومالية في كل ما نقدّمه",
@@ -1185,9 +1185,9 @@ const translations: Record<Language, Record<string, string>> = {
       "بناء علاقات قوية مع جمهورنا وتعزيز الروابط الهادفة.",
     valuesSubtitle:
       "المبادئ التي توجه كل ما نقوم به في مجموعة أسال الإعلامية",
-    missionTitle: "مهمتنا",
+    missionTitle: "المهمة",
     missionP1:
-      "إتُنتج ASAL TV محتوىً صومالياً أصيلاً، وتُمكّن المواهب المحلية، وتُعزّز الوحدة، وتربط الجمهور الصومالي حول العالم عبر إعلامٍ شامل وشراكاتٍ مستدامة.",
+      "إنشاء محتوى صومالي أصيل، وتمكين المواهب المحلية، وتعزيز الوحدة، وربط الجمهور الصومالي العالمي من خلال الإعلام الشامل والشراكات المستدامة.",
     missionP2:
       "نسعى لأن نكون جسرًا بين الثقافات، وتمكين الأصوات، وتقديم محتوى عالي الجودة يثقف ويُسلي ويرفع من شأن المجتمع. جذورنا في النزاهة والإبداع والأثر الاجتماعي الإيجابي.",
     missionCardCulturalExchangeTitle: "التبادل الثقافي",
@@ -1299,8 +1299,8 @@ const translations: Record<Language, Record<string, string>> = {
     yearsExperience: "سنوات خبرة",
     newsletterSubtitle:
       "اشترك في النشرة البريدية ولا تفوّت آخر الأخبار الإسلامية الصومالية من مجموعة أسال الإعلامية",
-    visionTitle: "رؤيتنا",
-    visionP1: "أن نكون المنصّة الإعلامية الصومالية الأكثر ثقةً وتأثيرًا، التي تصل بين المجتمعات في الداخل والمهجر من خلال محتوى مُلهِم، أصيل، وغنيّ ثقافيًا"
+    visionTitle: "الرؤية",
+    visionP1: "أن نكون المنصة الإعلامية الصومالية الأكثر ثقة وتأثيرًا، وربط المجتمعات المحلية والمهاجرة من خلال محتوى ملهم وأصيل وغني ثقافيًا."
 
     // Nasiye
     // downloadForIOS: "تحميل لنظام iOS",
@@ -1709,18 +1709,18 @@ const translations: Record<Language, Record<string, string>> = {
     readyToStartSubtitle:
       "Aan ka wada hadalno sida aan aragiddaada ugu soo noolaysan karno adeegyadayada warbaahinta oo dhammaystiran",
     noServicesFound: "Adeegyo lama helin.",
-    consultation: "La Tasho",
-    consultationDesc:
-      "Waxaan ku bilaabnaa fahamka aragiddaada, yoolalkaaga iyo dadka aad u talagashay si aan u abuurno istaraatiijiyadda ugu fiican.",
-    planning: "Qorshaynta",
-    planningDesc:
-      "Kooxdayadu waxay soo saartaa qorshe soo saaris oo dhammaystiran oo leh jadwal, kheyraad iyo hagid hal-abuur.",
-    production: "Soo Saarista",
-    productionDesc:
-      "Fulinta xirfadeed iyadoo la adeegsanayo qalabka ugu casrisan iyo kooxaha soo saarista oo khibrad leh.",
-    delivery: "Gaarsiinta",
-    deliveryDesc:
-      "Gaarsiinta nuxurka ugu dambeeya oo leh taageero joogto ah iyo kormeerka waxqabadka si loo helo natiijooyinka ugu fiican.",
+    discover: "Helitaanka",
+    discoverDesc: "Fahamka baahiyahaada",
+    design: "Qaabeynta",
+    designDesc: "Dhisida istaraatiijiyadda saxda ah",
+    create: "Abuurista",
+    createDesc: "Soo saarista waxyaabaha tayo sare leh",
+    approve: "Ansixinta",
+    approveDesc: "Hagaajinta iyo dhammaystirka",
+    publish: "Daabacada",
+    publishDesc: "Qaybinta goobaha kala duwan",
+    support: "Taageerada",
+    supportDesc: "Kormeerka waxqabadka",
     viewAllServices: "Dhammaan Adeegyada",
 
     latest: "Akhbaartii ugu Dambeysey",
@@ -1815,19 +1815,19 @@ const translations: Record<Language, Record<string, string>> = {
     monthlyViewers: "Daawadayaal Bishiiba",
     countries: "Dalal",
     contentHours: "Saacado Nuxur",
-    aboutTitle: "Ku Saabsan Asal Media Group",
-    aboutSubtitle: "Hormuudka hal-abuurnimada warbaahinta ee Bariga Afrika",
-    ourStory: "Sheekadeennii",
-    ourValues: "Qiyamkeenna",
+    aboutTitle: "Ku Saabsan Shirkadda Warbaahinta Asal",
+    aboutSubtitle: "Ku xirista bulshada iyada oo loo marayo waxyaabaha awood leh.",
+    ourStory: "Sheekaydayada",
+    ourValues: "Qiyamkayaga",
     readyToJoin: "Diyaar ma u tahay inaad nala safarto?",
     discoverOpportunities:
       "Ka hel fursado aad uga mid noqoto mustaqbalka warbaahinta Bariga Afrika",
     storyParagraph1:
-      "Asal Media Group waxa ay ka dhalatay rajo lagu beddelayo muuqaalka warbaahinta Bariga Afrika, waxana ay ka kortay hal kanaal TV ah ilaa nidaam warbaahineed oo dhamaystiran oo gaadha malaayiin dad ah dunida oo dhan.",
+      "Shirkadda Warbaahinta Asal waa shirkad hogaamineysa soo saarista iyo gudbinta warbaahinta, oo xaruntaheedu tahay Muqdisho, Soomaaliya.",
     storyParagraph2:
-      "Socodkeenna waxa uu ka bilowday Asal TV, annagoo u keenayna barnaamijyo tayo leh oo Soomaali ah dhagaystayaal caalami ah. Markii aan aragnay baahiyaha bulshada, waanu ballaadhnay: Jiil Media oo loogu talagalay dhagaystayaasha dijitaalka ah, Masrax Production oo wax-soo-saar tayo sare leh, iyo madasha qulqulka Nasiye.",
+      "Iyada oo loo marayo ujeedkayaga, Shirkadda Warbaahinta Asal waxay soo saartaa waxyaabaha goobaha kala duwan iyo xalalka isgaarsiinta oo loo habeeyay baahiyaha isbeddelaya ee dadka Soomaaliyeed. Adeegyadayada kala duwan waxay ka kooban yihiin gudbinta, soo saarista filimada, dabagalka dhacdooyinka, xayaysiinta, iyo warbaahinta dijitaalka ah, iyada oo hubinaysa nidaam dhamaystiran oo hal-abuur iyo heer-sare isgaarsiin ah.",
     storyParagraph3:
-      "Maanta waxaanu nahay kooxda warbaahinta ugu horeysa ee gobolka, annagoo ilaalinayna dhaxalka dhaqameed isla markaana qaadanayna tignoolajiyada casriga ah si aanu u adeegsanno dhagaystayaal badan oo kala duwan oo caalami ah.",
+      "Iyada oo loo marayo Asal TV iyo Nasiye IPTV, Masrax Productions, Jiil Media, Abka Nasiye iyo warbaahinta dijitaalka ah, Shirkadda Warbaahinta Asal waxay maamushaa xirmooyin isku dhafan oo calaamado ah oo u go'an inay warbixin, madadaalo, iyo dhiirigelin bulshada Soomaaliyeed gudaha iyo dibadda adduunka.",
     culturalBridge: "Dhammaystir Dhaqameed",
     culturalBridgeDesc:
       "Waxaan sharafnaa oo ilaalinnaa qiyamka, afka, iyo aqoonsiga Soomaaliyeed dhammaan waxa aan abuurno",
@@ -1836,11 +1836,11 @@ const translations: Record<Language, Record<string, string>> = {
       "Dhiska xiriirro xooggan oo lala yeesho dhagaystayaasha iyo kobcinta isku-xidhka wax-ku-oolka ah.",
     valuesSubtitle:
       "Qiyamka nagu hago wax kasta oo aan qabanno ee Asal Media Group",
-    missionTitle: "Hadafkeenna",
+    missionTitle: "Ujeedka",
     missionP1:
-      "ASAL TV waxay soo saartaa nuxur Soomaali dhab ah, waxay dhiirrigelisaa kartida maxalliga ah, waxay kobcisaa midnimo, waxayna isku xirtaa bulshada Soomaaliyeed ee dunida dacalladeeda iyada oo loo marayo warbaahin loo wada dhan yahay iyo iskaashi waara.",
-    visionTitle: "Himiladeenna",
-    visionP1: "Inaan noqono madal warbaahineed Soomaaliyeed oo lagu kalsoonaan karo kana saamayn badan, oo isku xirta bulshada gudaha iyo qurbo-joogta, annagoo soo gudbinayna nuxur dhiirrigelin leh, dhab ah, hodan ku ah dhaqanka.",
+      "Inaan abuurno waxyaabaha Soomaaliyeed ee dhabta ah, awoodsiino talantada maxalliga ah, horumariyo midaynta, oo ku xirno daawadayaasha Soomaaliyeed ee adduunka oo dhan iyada oo loo marayo warbaahinta wada-helid leh iyo iskaashiga waara.",
+    visionTitle: "Aragti",
+    visionP1: "Inaan noqono goobta warbaahinta Soomaaliyeed ee ugu aaminan iyo ugu saameyn badan, oo ku xirta bulshada maxalliga ah iyo qurbajoogta iyada oo loo marayo waxyaabaha dhiirigeliyo, dhab ah, oo dhaqan aad u hodan.",
 
     missionP2:
       "Waxaan dooneynaa inaan noqono buundada u dhexeysa dhaqamada, korna u qaadno codadka, aanna soo saarno nuxur tayo sare leh oo wax baro, maaweeliya oo dhiirrigeliya. Hadafkeenna waxa sal u ah daacadnimo, hal-abuurnimo iyo saameyn bulsho oo togan.",

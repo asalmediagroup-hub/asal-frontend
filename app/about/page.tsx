@@ -21,13 +21,13 @@ export default function AboutPage() {
   ];
 
   const values = [
-  { title: t("culturalIntegrity"), description: t("culturalIntegrityDesc"), icon: Globe },
-  { title: t("excellence"), description: t("excellenceDesc"), icon: Award },
-  { title: t("inclusivity"), description: t("inclusivityDesc"), icon: Users },
-  { title: t("empowerment"), description: t("empowermentDesc"), icon: TrendingUp },
-  { title: t("transparencyTrust"), description: t("transparencyTrustDesc"), icon: ShieldCheck },
-  { title: t("innovation"), description: t("innovationDesc"), icon: Lightbulb }
-];
+    { title: t("culturalIntegrity"), description: t("culturalIntegrityDesc"), icon: Globe },
+    { title: t("excellence"), description: t("excellenceDesc"), icon: Award },
+    { title: t("inclusivity"), description: t("inclusivityDesc"), icon: Users },
+    { title: t("empowerment"), description: t("empowermentDesc"), icon: TrendingUp },
+    { title: t("transparencyTrust"), description: t("transparencyTrustDesc"), icon: ShieldCheck },
+    { title: t("innovation"), description: t("innovationDesc"), icon: Lightbulb }
+  ];
 
   return (
     <>
@@ -130,22 +130,23 @@ export default function AboutPage() {
 
         {/* CTA */}
         <section className="py-20 bg-primary text-primary-foreground">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-<Link href="/careers" passHref>
-    <Button size="lg" variant="secondary">
-      {t("careers")}
-    </Button>
-  </Link>
-
-  <Link href="/contact" passHref>
-    <Button
-      size="lg"
-      variant="outline"
-      className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-    >
-      {t("contact")}
-    </Button>
-  </Link>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/careers" passHref>
+                <Button size="lg" variant="secondary">
+                  {t("careers")}
+                </Button>
+              </Link>
+              <Link href="/contact" passHref>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+                >
+                  {t("contact")}
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </div>

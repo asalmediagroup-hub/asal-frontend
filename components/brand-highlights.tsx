@@ -135,9 +135,8 @@ function BrandCard({
 
           {/* Button AFTER text, aligned end (LTR right, RTL left) */}
           <div
-            className={`mt-4 flex ${
-              isRTL ? "justify-start" : "justify-end"
-            }`}
+            className={`mt-4 flex ${isRTL ? "justify-start" : "justify-end"
+              }`}
           >
             <Button asChild variant="ghost" className={brand.buttonClass}>
               <Link href={brand.href} className="flex items-center gap-2 px-3 py-2">
@@ -183,7 +182,7 @@ export function BrandHighlights() {
         name: t("brandJiilMediaName"),
         description: t("brandJiilMediaDesc"),
         href: "/brands/jiil-media",
-        image: "/Jiil.jpg",
+        image: "/Jiil.png",
         bodyColor: "#F9FAFA",
         titleClass:
           "text-transparent bg-clip-text bg-gradient-to-r from-[#1071B6] to-[#FAB53C]",

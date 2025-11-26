@@ -28,7 +28,7 @@ export const translations = {
     languages: "Languages",
 
     // Brand Highlights
-    brandsTitle: "Our Media Brands",
+    brandsTitle: "Our Media Networks",
     brandsSubtitle: "Four distinct platforms serving diverse audiences across East Africa",
 
     // Asal TV
@@ -64,7 +64,7 @@ export const translations = {
 
     // About Page
     aboutTitle: "About Asal Media Corporation",
-    aboutSubtitle: "Leading media innovation across East Africa",
+    aboutSubtitle: "Connecting communities through powerful content.",
     ourStory: "Our Story",
     ourValues: "Our Values",
     readyToJoin: "Ready to Join Our Journey?",
@@ -73,22 +73,34 @@ export const translations = {
 
     // About page story content
     storyParagraph1:
-      "Founded with a vision to transform the media landscape in East Africa, Asal Media Corporation has grown from a single television channel to a comprehensive media ecosystem serving millions of viewers worldwide.",
+      "Asal Media Corporation is a leading media production and broadcasting company headquartered in Mogadishu, Somalia.",
     storyParagraph2:
-      "Our journey began with Asal TV, bringing quality Somali programming to audiences across the globe. As we recognized the evolving needs of our community, we expanded our reach through Jiil Media for digital-native audiences, Masrax Production for premium content creation, and Nasiye Platform for on-demand streaming.",
+      "Through our mission, Asal Media Corporation delivers multi-platform content and communication solutions tailored to the evolving needs of Somali audiences. Our diverse services span broadcasting, film production, event coverage, advertising, and digital media, ensuring a complete ecosystem of creative and communication excellence.",
     storyParagraph3:
-      "Today, we stand as the leading media group in the region, committed to preserving cultural heritage while embracing technological innovation to serve our diverse, global audience.",
+      "through Asal TV and Nasiye IPTV, Masrax Productions, Jiil Media, Nasiye App and digital media, Asal Media operates an integrated portfolio of brands dedicated to informing, entertaining, and inspiring Somali communities both locally and globally.",
 
     // Values
     innovation: "Innovation",
     innovationDesc: "Pioneering new ways to connect audiences with compelling content across multiple platforms.",
-    culturalBridge: "Cultural Bridge",
-    culturalBridgeDesc: "Connecting Somali and East African communities worldwide through authentic storytelling.",
+    culturalIntegrity: "Cultural Integrity",
+    culturalIntegrityDesc: "Preserving and promoting authentic Somali culture and values in all our content.",
     excellence: "Excellence",
     excellenceDesc: "Maintaining the highest standards in content creation, production, and audience engagement.",
+    inclusivity: "Inclusivity",
+    inclusivityDesc: "Ensuring our content and services are accessible and representative of all Somali communities.",
+    empowerment: "Empowerment",
+    empowermentDesc: "Empowering local talent and communities through opportunities and authentic representation.",
+    transparencyTrust: "Transparency & Trust",
+    transparencyTrustDesc: "Building trust through transparent communication and ethical practices.",
     community: "Community",
     communityDesc: "Building strong relationships with our audiences and fostering meaningful connections.",
     valuesSubtitle: "The principles that guide everything we do at Asal Media Corporation",
+
+    // Vision and Mission
+    visionTitle: "Vision",
+    visionP1: "To be the most trusted and influential Somali media platform, connecting local and diaspora communities through inspiring, authentic, and culturally rich content.",
+    missionTitle: "Mission",
+    missionP1: "To create authentic Somali content, empower local talent, promote unity, and connect the global Somali audience through inclusive media and sustainable partnerships.",
 
     // Services Page
     servicesPageTitle: "Our Services",
@@ -204,8 +216,8 @@ export const translations = {
     rightsReserved: "جميع الحقوق محفوظة.",
 
     // About Page
-    aboutTitle: "حول مجموعة أصل الإعلامية التجارية",
-    aboutSubtitle: "رائدة الابتكار الإعلامي عبر شرق أفريقيا",
+    aboutTitle: "حول شركة أصل للإعلام",
+    aboutSubtitle: "ربط المجتمعات من خلال المحتوى القوي.",
     ourStory: "قصتنا",
     ourValues: "قيمنا",
     readyToJoin: "مستعد للانضمام إلى رحلتنا؟",
@@ -214,22 +226,34 @@ export const translations = {
 
     // About page story content
     storyParagraph1:
-      "تأسست برؤية لتحويل المشهد الإعلامي في شرق أفريقيا، نمت مجموعة أصل الإعلامية من قناة تلفزيونية واحدة إلى نظام إعلامي شامل يخدم ملايين المشاهدين في جميع أنحاء العالم.",
+      "شركة أصل للإعلام هي شركة رائدة في إنتاج وبث المحتوى الإعلامي، ومقرها الرئيسي في مقديشو، الصومال.",
     storyParagraph2:
-      "بدأت رحلتنا مع تلفزيون أصل، حيث قدمنا برامج صومالية عالية الجودة للجماهير عبر العالم. وبينما أدركنا الاحتياجات المتطورة لمجتمعنا، وسعنا نطاق وصولنا من خلال إعلام جيل للجمهور الرقمي، وإنتاج مسرح لإنشاء المحتوى المتميز، ومنصة ناسية للبث عند الطلب.",
+      "من خلال مهمتنا، تقدم شركة أصل للإعلام محتوى متعدد المنصات وحلول اتصال مصممة خصيصًا للاحتياجات المتطورة للجماهير الصومالية. تمتد خدماتنا المتنوعة عبر البث، وإنتاج الأفلام، وتغطية الأحداث، والإعلان، والإعلام الرقمي، مما يضمن نظامًا بيئيًا كاملاً للإبداع والتميز في الاتصال.",
     storyParagraph3:
-      "اليوم، نقف كمجموعة إعلامية رائدة في المنطقة، ملتزمون بالحفاظ على التراث الثقافي مع احتضان الابتكار التكنولوجي لخدمة جمهورنا المتنوع والعالمي.",
+      "من خلال تلفزيون أصل وناسية IPTV، وإنتاجات مسرح، وإعلام جيل، وتطبيق ناسية والإعلام الرقمي، تعمل أصل للإعلام على محفظة متكاملة من العلامات التجارية المكرسة لإعلام وترفيه وإلهام المجتمعات الصومالية محليًا وعالميًا.",
 
     // Values
     innovation: "الابتكار",
     innovationDesc: "ريادة طرق جديدة لربط الجماهير بالمحتوى المقنع عبر منصات متعددة.",
-    culturalBridge: "الجسر الثقافي",
-    culturalBridgeDesc: "ربط المجتمعات الصومالية وشرق الأفريقية في جميع أنحاء العالم من خلال السرد الأصيل.",
+    culturalIntegrity: "النزاهة الثقافية",
+    culturalIntegrityDesc: "الحفاظ على الثقافة والقيم الصومالية الأصيلة وتعزيزها في جميع محتوانا.",
     excellence: "التميز",
     excellenceDesc: "الحفاظ على أعلى المعايير في إنشاء المحتوى والإنتاج وإشراك الجمهور.",
+    inclusivity: "الشمولية",
+    inclusivityDesc: "ضمان أن يكون محتوانا وخدماتنا متاحة وتمثل جميع المجتمعات الصومالية.",
+    empowerment: "التمكين",
+    empowermentDesc: "تمكين المواهب المحلية والمجتمعات من خلال الفرص والتمثيل الأصيل.",
+    transparencyTrust: "الشفافية والثقة",
+    transparencyTrustDesc: "بناء الثقة من خلال التواصل الشفاف والممارسات الأخلاقية.",
     community: "المجتمع",
     communityDesc: "بناء علاقات قوية مع جماهيرنا وتعزيز الروابط المعنوية.",
-    valuesSubtitle: "المبادئ التي توجه كل ما نقوم به في مجموعة أصل الإعلامية",
+    valuesSubtitle: "المبادئ التي توجه كل ما نقوم به في شركة أصل للإعلام",
+
+    // Vision and Mission
+    visionTitle: "الرؤية",
+    visionP1: "أن نكون المنصة الإعلامية الصومالية الأكثر ثقة وتأثيرًا، وربط المجتمعات المحلية والمهاجرة من خلال محتوى ملهم وأصيل وغني ثقافيًا.",
+    missionTitle: "المهمة",
+    missionP1: "إنشاء محتوى صومالي أصيل، وتمكين المواهب المحلية، وتعزيز الوحدة، وربط الجمهور الصومالي العالمي من خلال الإعلام الشامل والشراكات المستدامة.",
 
     // Services Page
     servicesPageTitle: "خدماتنا",
@@ -347,8 +371,8 @@ export const translations = {
     rightsReserved: "Dhammaan xuquuqda way dhowran yihiin.",
 
     // About Page
-    aboutTitle: "Ku Saabsan Kooxda Warbaahinta Asal",
-    aboutSubtitle: "Hogaaminta hal-abuurka warbaahinta ee Bariga Afrika",
+    aboutTitle: "Ku Saabsan Shirkadda Warbaahinta Asal",
+    aboutSubtitle: "Ku xirista bulshada iyada oo loo marayo waxyaabaha awood leh.",
     ourStory: "Sheekaydayada",
     ourValues: "Qiyamkayaga",
     readyToJoin: "Diyaar u tahay inaad ku biirto safarkayaga?",
@@ -357,23 +381,34 @@ export const translations = {
 
     // About page story content
     storyParagraph1:
-      "Waxaa la aasaasay aragti ah in la beddelo muuqaalka warbaahinta Bariga Afrika, Kooxda Warbaahinta Asal waxay ka kortay hal telefishin ilaa nidaam warbaahinta oo dhamaystiran oo u adeega malaayiin daawadayaal adduunka oo dhan.",
+      "Shirkadda Warbaahinta Asal waa shirkad hogaamineysa soo saarista iyo gudbinta warbaahinta, oo xaruntaheedu tahay Muqdisho, Soomaaliya.",
     storyParagraph2:
-      "Safarkayagu wuxuu ku bilaabmay Asal TV, oo keenay barnaamijyo Soomaali ah oo tayo sare leh dadka adduunka oo dhan. Markaan ogaannay baahiyaha isbeddelaya ee bulshadeenna, waxaan ballaarinnay gaadhitaankeenna iyada oo loo marayo Jiil Media dadka dijitaalka ah, Masrax Production abuurista waxyaabaha heer sare ah, iyo Goobta Nasiye gudbinta marka la doonayo.",
+      "Iyada oo loo marayo ujeedkayaga, Shirkadda Warbaahinta Asal waxay soo saartaa waxyaabaha goobaha kala duwan iyo xalalka isgaarsiinta oo loo habeeyay baahiyaha isbeddelaya ee dadka Soomaaliyeed. Adeegyadayada kala duwan waxay ka kooban yihiin gudbinta, soo saarista filimada, dabagalka dhacdooyinka, xayaysiinta, iyo warbaahinta dijitaalka ah, iyada oo hubinaysa nidaam dhamaystiran oo hal-abuur iyo heer-sare isgaarsiin ah.",
     storyParagraph3:
-      "Maanta, waxaan u taagnaa koox warbaahinta oo hoggaamisa gobolka, oo ku dadaalsan ilaalinta dhaxalka dhaqanka iyadoo la soo dhaweynayo hal-abuurka tignoolajiyada si aan ugu adeegno dadkayaga kala duwan ee caalamiga ah.",
+      "Iyada oo loo marayo Asal TV iyo Nasiye IPTV, Masrax Productions, Jiil Media, Abka Nasiye iyo warbaahinta dijitaalka ah, Shirkadda Warbaahinta Asal waxay maamushaa xirmooyin isku dhafan oo calaamado ah oo u go'an inay warbixin, madadaalo, iyo dhiirigelin bulshada Soomaaliyeed gudaha iyo dibadda adduunka.",
 
     // Values
     innovation: "Hal-abuur",
     innovationDesc: "Horumarinta siyaabo cusub oo lagu xiro dadka waxyaabaha soo jiidashada leh ee goobaha kala duwan.",
-    culturalBridge: "Buundada Dhaqanka",
-    culturalBridgeDesc:
-      "Ku xirista bulshada Soomaaliyeed iyo Bariga Afrika adduunka oo dhan iyada oo loo marayo sheekooyin run ah.",
+    culturalIntegrity: "Daacadnimo Dhaqameed",
+    culturalIntegrityDesc: "Ilaalinta iyo horumarinta dhaqanka iyo qiyamka Soomaaliyeed ee dhabta ah dhammaan waxyaabahayaga.",
     excellence: "Heer-sare",
     excellenceDesc: "Ilaalinta heerarka ugu sarreeya abuurista waxyaabaha, wax soo saarka, iyo ka qaybgalka dadka.",
+    inclusivity: "Wada-helid",
+    inclusivityDesc: "Hubinta in waxyaabahayaga iyo adeegyadayada ay heli karaan oo ay u matalaan dhammaan bulshada Soomaaliyeed.",
+    empowerment: "Awoodsiin",
+    empowermentDesc: "Awoodsiinta talantada iyo bulshada maxalliga ah iyada oo loo marayo fursadaha iyo matalaadda dhabta ah.",
+    transparencyTrust: "Iftiimayn & Iimaan",
+    transparencyTrustDesc: "Dhisida iimaanka iyada oo loo marayo isgaarsiin iftiimayn leh iyo dhaqamada xeer-dhaqameedka ah.",
     community: "Bulshada",
     communityDesc: "Dhisida xiriir xoog leh dadkayaga daawada iyo kobcinta xiriirro macno leh.",
-    valuesSubtitle: "Mabaadi'da hagaysa wax kasta oo aan ku samayno Kooxda Warbaahinta Asal",
+    valuesSubtitle: "Mabaadi'da hagaysa wax kasta oo aan ku samayno Shirkadda Warbaahinta Asal",
+
+    // Vision and Mission
+    visionTitle: "Aragti",
+    visionP1: "Inaan noqono goobta warbaahinta Soomaaliyeed ee ugu aaminan iyo ugu saameyn badan, oo ku xirta bulshada maxalliga ah iyo qurbajoogta iyada oo loo marayo waxyaabaha dhiirigeliyo, dhab ah, oo dhaqan aad u hodan.",
+    missionTitle: "Ujeedka",
+    missionP1: "Inaan abuurno waxyaabaha Soomaaliyeed ee dhabta ah, awoodsiino talantada maxalliga ah, horumariyo midaynta, oo ku xirno daawadayaasha Soomaaliyeed ee adduunka oo dhan iyada oo loo marayo warbaahinta wada-helid leh iyo iskaashiga waara.",
 
     // Services Page
     servicesPageTitle: "Adeegyadayada",

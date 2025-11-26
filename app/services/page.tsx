@@ -427,19 +427,21 @@ export default function ServicesPage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("ourProcess")}</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t("ourProcessSubtitle")}</p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4">
               {[
-                { step: "01", title: t("consultation"), description: t("consultationDesc") },
-                { step: "02", title: t("planning"), description: t("planningDesc") },
-                { step: "03", title: t("production"), description: t("productionDesc") },
-                { step: "04", title: t("delivery"), description: t("deliveryDesc") },
+                { step: "1", title: t("discover"), description: t("discoverDesc") },
+                { step: "2", title: t("design"), description: t("designDesc") },
+                { step: "3", title: t("create"), description: t("createDesc") },
+                { step: "4", title: t("approve"), description: t("approveDesc") },
+                { step: "5", title: t("publish"), description: t("publishDesc") },
+                { step: "6", title: t("support"), description: t("supportDesc") },
               ].map((step, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-lg md:text-xl lg:text-2xl font-bold mx-auto mb-2 md:mb-3 lg:mb-4">
                     {step.step}
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.description}</p>
+                  <h3 className="text-sm md:text-base lg:text-xl font-semibold mb-1 md:mb-2 lg:mb-3">{step.title}</h3>
+                  <p className="text-xs md:text-sm lg:text-base text-muted-foreground">{step.description}</p>
                 </div>
               ))}
             </div>
@@ -453,21 +455,21 @@ export default function ServicesPage() {
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">{t("readyToStartSubtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" passHref>
-    <Button
-      size="lg"
-      variant="secondary"
-    >
-      {t("contact")}
-    </Button>
-  </Link>
-  <Link href="/portfolio" passHref>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-              >
-                {t("viewPortfolio")}
-              </Button>
+                <Button
+                  size="lg"
+                  variant="secondary"
+                >
+                  {t("contact")}
+                </Button>
+              </Link>
+              <Link href="/portfolio" passHref>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+                >
+                  {t("viewPortfolio")}
+                </Button>
               </Link>
             </div>
           </div>
