@@ -186,14 +186,19 @@ export function Footer() {
             </p>
             <div className="space-y-2">
               <Button
-                className="w-full"
                 onClick={handleDownloadClick2}
-                className="bg-secondary text-white"
+                className="w-full bg-secondary text-white h-11"
+                size="lg"
               >
                 <Smartphone className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"}`} />
                 {t("appStore")}
               </Button>
-              <Button onClick={handleDownloadClick} variant="outline" className="w-full bg-transparent">
+              <Button
+                onClick={handleDownloadClick}
+                variant="outline"
+                className="w-full bg-transparent h-11"
+                size="lg"
+              >
                 <Download className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"}`} />
                 {t("googlePlay")}
               </Button>
