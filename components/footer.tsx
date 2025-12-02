@@ -63,7 +63,7 @@ export function Footer() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-muted-foreground hover:text-card-foreground"
+                className="text-secondary hover:text-primary transition-colors"
                 aria-label="Facebook"
                 onClick={() => window.open("https://www.facebook.com/asaltv.so", "_blank", "noopener,noreferrer")}
               >
@@ -72,7 +72,7 @@ export function Footer() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-muted-foreground hover:text-card-foreground"
+                className="text-secondary hover:text-primary transition-colors"
                 aria-label="Twitter / X"
               >
                 <Twitter className="h-5 w-5" />
@@ -80,7 +80,7 @@ export function Footer() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-muted-foreground hover:text-card-foreground"
+                className="text-secondary hover:text-primary transition-colors"
                 aria-label="Instagram"
                 onClick={() => window.open("https://www.instagram.com/asaltv.so/", "_blank", "noopener,noreferrer")}
               >
@@ -89,7 +89,7 @@ export function Footer() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-muted-foreground hover:text-card-foreground"
+                className="text-secondary hover:text-primary transition-colors"
                 aria-label="YouTube"
                 onClick={() => window.open("https://www.youtube.com/@asaltvso", "_blank", "noopener,noreferrer")}
               >

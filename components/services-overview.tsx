@@ -125,8 +125,7 @@ export function ServicesOverview() {
                       {/* Icon */}
                       <div className="p-2 rounded-full flex-shrink-0 bg-white/70 shadow-sm transition-transform duration-300 group-hover:scale-105">
                         <IconComponent
-                          className="h-6 w-6 transition-colors duration-300"
-                          className="text-secondary/50"
+                          className="h-6 w-6 transition-colors duration-300 text-secondary/50 group-hover:text-secondary"
                         />
                       </div>
 
@@ -134,8 +133,7 @@ export function ServicesOverview() {
                       <div className="space-y-4 flex-1">
                         <div className="space-y-2">
                           <h3
-                            className="text-xl font-semibold transition-colors duration-300"
-                            className="text-secondary"
+                            className="text-xl font-semibold transition-colors duration-300 text-secondary"
                           >
                             {service.title}
                           </h3>

@@ -262,7 +262,7 @@ export function NewsPreview() {
                 aria-label={t?.("prev") || "Prev"}
                 className="hidden md:inline-flex"
               >
-                <ChevronLeft className="h-5 w-5" />
+                <ChevronLeft className="h-5 w-5 text-secondary" />
               </Button>
             ) : (
               <span className="hidden md:block" />
@@ -271,7 +271,7 @@ export function NewsPreview() {
             <Button asChild variant="outline" size="lg" className={`${isRTL ? "flex-row-reverse" : ""}`}>
               <Link href="/news">
                 <span>{lblViewAll}</span>
-                <ArrowRight className={`h-4 w-4 ${arrowSpace} ${isRTL ? "-scale-x-100" : ""}`} />
+                <ArrowRight className={`h-4 w-4 text-secondary ${arrowSpace} ${isRTL ? "-scale-x-100" : ""}`} />
               </Link>
             </Button>
 
@@ -283,7 +283,7 @@ export function NewsPreview() {
                 aria-label={t?.("next") || "Next"}
                 className="hidden md:inline-flex"
               >
-                <ChevronRight className="h-5 w-5" />
+                <ChevronRight className="h-5 w-5 text-secondary" />
               </Button>
             ) : (
               <span className="hidden md:block" />
@@ -333,11 +333,11 @@ export function NewsPreview() {
                   <div className="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t border-border/50">
                     <div className={`flex items-center gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
                       <div className="flex items-center gap-1">
-                        <Calendar className="h-3 w-3" />
+                        <Calendar className="h-3 w-3 text-secondary" />
                         <span>{formatDateISO(item.date, locale)}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
+                        <Clock className="h-3 w-3 text-secondary" />
                         <span>{formatReadTime(item.readMinutes as number, language)}</span>
                       </div>
                     </div>
@@ -354,7 +354,7 @@ export function NewsPreview() {
                           {lblReadMore}
                         </span>
                         <ArrowRight
-                          className={`h-4 w-4 inline-block align-middle group-hover:translate-x-1 transition-transform duration-300 ${isRTL ? "-scale-x-100" : ""}`}
+                          className={`h-4 w-4 inline-block align-middle text-secondary group-hover:translate-x-1 transition-transform duration-300 ${isRTL ? "-scale-x-100" : ""}`}
                         />
                       </Link>
                     </Button>

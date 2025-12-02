@@ -340,10 +340,10 @@ export function TestimonialsSection() {
                 <Card className="relative overflow-hidden border border-border/50 rounded-2xl p-0 h-full">
                   <CardContent className={`p-6 md:p-8 space-y-6 h-full ${align}`}>
                     {/* Decorative quotes */}
-                    <div className={`absolute top-6 ${isRTL ? "left-6" : "right-6"} text-primary/20`}>
+                    <div className={`absolute top-6 ${isRTL ? "left-6" : "right-6"} text-secondary/20`}>
                       <Quote className="h-8 w-8" />
                     </div>
-                    <div className={`absolute bottom-6 ${isRTL ? "right-6" : "left-6"} text-primary/10 rotate-180`}>
+                    <div className={`absolute bottom-6 ${isRTL ? "right-6" : "left-6"} text-secondary/10 rotate-180`}>
                       <Quote className="h-8 w-8" />
                     </div>
 
@@ -405,10 +405,10 @@ export function TestimonialsSection() {
                   <Card className="relative overflow-hidden border border-border/50 rounded-2xl p-0 h-full">
                     <CardContent className={`p-6 md:p-8 space-y-6 h-full ${align}`}>
                       {/* Decorative quotes */}
-                      <div className={`absolute top-6 ${isRTL ? "left-6" : "right-6"} text-primary/20`}>
+                      <div className={`absolute top-6 ${isRTL ? "left-6" : "right-6"} text-secondary/20`}>
                         <Quote className="h-8 w-8" />
                       </div>
-                      <div className={`absolute bottom-6 ${isRTL ? "right-6" : "left-6"} text-primary/10 rotate-180`}>
+                      <div className={`absolute bottom-6 ${isRTL ? "right-6" : "left-6"} text-secondary/10 rotate-180`}>
                         <Quote className="h-8 w-8" />
                       </div>
 
@@ -445,10 +445,10 @@ export function TestimonialsSection() {
         {/* Prev / Next */}
         {!isLoading && canSlide && (
           <div className={`mt-8 flex items-center justify-center gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
-            <Button variant="outline" size="icon" onClick={prev} aria-label={t?.("prev") || "Prev"}>
+            <Button variant="outline" size="icon" onClick={prev} aria-label={t?.("prev") || "Prev"} className="text-secondary hover:text-primary">
               <ChevronLeft className="h-5 w-5" />
             </Button>
-            <Button variant="outline" size="icon" onClick={next} aria-label={t?.("next") || "Next"}>
+            <Button variant="outline" size="icon" onClick={next} aria-label={t?.("next") || "Next"} className="text-secondary hover:text-primary">
               <ChevronRight className="h-5 w-5" />
             </Button>
           </div>

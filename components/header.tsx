@@ -23,11 +23,14 @@ export function Header() {
   const [showHiddenMenus, setShowHiddenMenus] = useState(false); // "More..." hover state
 
   // Home data (site name + logo)
-  const { data: homeList } = useGetHomesQuery?.() ?? { data: undefined };
+  const { data: homeList, isLoading: isLoadingLogo } = useGetHomesQuery?.() ?? { data: undefined, isLoading: false };
   const home = homeList?.data?.[0];
   const siteName = home?.siteName || "Asal Media Corporation";
   const siteNameShort = siteName?.split(" ")[0] || "Asal";
-  const logoSrc = resolveImageUrl(home?.logoImage, "/Logo Asal-03.svg");
+  // Only resolve logo if it exists, no fallback
+  const logoSrc = home?.logoImage && home.logoImage.trim() && home.logoImage !== "null" && home.logoImage !== "undefined"
+    ? resolveImageUrl(home.logoImage, "")
+    : null;
 
   // Language provider
   const { language, setLanguage, t } = useLanguage();
@@ -145,14 +148,17 @@ export function Header() {
         <div className="flex h-16 md:h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0 hover:opacity-90 transition-opacity">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={logoSrc}
-              alt={siteName}
-              width={150}
-              height={75}
-              className="h-14 w-auto md:h-16 md:w-auto lg:h-20 lg:w-auto object-contain"
-            />
+            {isLoadingLogo ? (
+              <div className="h-14 w-32 md:h-16 md:w-36 lg:h-20 lg:w-40 bg-muted animate-pulse rounded" />
+            ) : logoSrc && logoSrc.trim() ? (
+              <img
+                src={logoSrc}
+                alt={siteName}
+                width={150}
+                height={75}
+                className="h-14 w-auto md:h-16 md:w-auto lg:h-20 lg:w-auto object-contain"
+              />
+            ) : null}
           </Link>
 
           {/* Desktop Navigation */}
@@ -171,7 +177,7 @@ export function Header() {
                     onBlur={() => setTimeout(() => setOpenDropdown(""), 150)}
                   >
                     {item.label}
-                    <ChevronDown className="h-4 w-4 ml-1" />
+                    <ChevronDown className="h-4 w-4 ml-1 text-secondary" />
                   </button>
                   {openDropdown === item.label && (
                     <div className="absolute left-0 mt-2 w-56 bg-background border rounded shadow-lg z-50">
@@ -252,7 +258,7 @@ export function Header() {
               }`}
           >
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <DropdownMenuTrigger className="flex items-center space-x-2 text-sm text-secondary hover:text-primary transition-colors">
                 <Globe className="h-4 w-4" />
                 <span className="hidden xl:inline">
                   {languageOptions.find((l) => l.code === language)?.flag}
@@ -281,7 +287,7 @@ export function Header() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden p-2 -mr-2"
+            className="lg:hidden p-2 -mr-2 text-secondary hover:text-primary transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -303,7 +309,7 @@ export function Header() {
                       }
                     >
                       {item.label}
-                      <ChevronDown className="h-4 w-4 ml-1" />
+                      <ChevronDown className="h-4 w-4 ml-1 text-secondary" />
                     </button>
                     {openDropdown === item.label && (
                       <div className="mt-2 ml-4 flex flex-col bg-background border rounded shadow-lg z-50">
@@ -368,7 +374,7 @@ export function Header() {
                 {/* Language switcher (mobile) */}
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="outline" className="w-full justify-start">
+                    <Button variant="outline" className="w-full justify-start text-secondary hover:text-primary">
                       <Globe className="h-4 w-4 mr-2" />
                       <span className="mr-2">
                         {languageOptions.find((l) => l.code === language)?.flag}

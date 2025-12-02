@@ -55,7 +55,7 @@ export default function AboutPage() {
                 const Icon = stat.icon;
                 return (
                   <div key={index} className="text-center">
-                    <Icon className="h-8 w-8 text-primary mx-auto mb-4" />
+                    <Icon className="h-8 w-8 text-secondary mx-auto mb-4" />
                     <div className="text-3xl font-bold text-foreground mb-2">
                       <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                     </div>
@@ -98,7 +98,7 @@ export default function AboutPage() {
                 return (
                   <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
                     <CardContent className="pt-6">
-                      <Icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                      <Icon className="h-12 w-12 text-secondary mx-auto mb-4" />
                       <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
                       <p className="text-muted-foreground">{value.description}</p>
                     </CardContent>

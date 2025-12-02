@@ -229,7 +229,7 @@ export default function CareersPage() {
                 return (
                   <Card key={i} className={cardClass}>
                     <CardContent className={contentClass}>
-                      <Icon className={`h-12 w-12 mx-auto mb-4 ${i % 2 !== 0 ? "text-white" : "text-primary"}`} />
+                      <Icon className={`h-12 w-12 mx-auto mb-4 ${i % 2 !== 0 ? "text-white" : "text-secondary"}`} />
                       <h3 className={titleClass}>{b.title}</h3>
                       <p className={descClass}>{b.description}</p>
                     </CardContent>
@@ -259,7 +259,7 @@ export default function CareersPage() {
                 return (
                   <Card key={index} className="text-center p-4">
                     <CardContent className="pt-4">
-                      <Icon className="h-8 w-8 text-primary mx-auto mb-2" />
+                      <Icon className="h-8 w-8 text-secondary mx-auto mb-2" />
                       <h3 className="font-semibold mb-1">{dept.name}</h3>
                       <p className="text-sm text-muted-foreground">
                         {t("careers.openPositions.count")}

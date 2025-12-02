@@ -200,7 +200,7 @@ export default function ContactPage() {
                               return (
                                 <SelectItem key={dept.value} value={dept.value}>
                                   <div className="flex items-center">
-                                    <Icon className="h-4 w-4 mr-2" />
+                                    <Icon className="h-4 w-4 mr-2 text-secondary" />
                                     {dept.label}
                                   </div>
                                 </SelectItem>

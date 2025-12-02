@@ -142,7 +142,7 @@ function BrandCard({
               <Link href={brand.href} className="flex items-center gap-2 px-3 py-2">
                 <span>{ctas.learnMore}</span>
                 <ArrowRight
-                  className={`h-4 w-4 ${isRTL ? "mr-2 rotate-180" : "ml-2"}`}
+                  className={`h-4 w-4 text-secondary ${isRTL ? "mr-2 rotate-180" : "ml-2"}`}
                   aria-hidden="true"
                 />
               </Link>

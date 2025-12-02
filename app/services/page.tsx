@@ -127,7 +127,7 @@ function Carousel<T>({
             onClick={() => setStartIdx((s) => Math.max(0, s - 1))}
             className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full border bg-white/90 p-2 shadow disabled:opacity-40"
           >
-            <ChevronLeft className="h-5 w-5" />
+            <ChevronLeft className="h-5 w-5 text-secondary" />
           </button>
           <button
             aria-label="Next"
@@ -135,7 +135,7 @@ function Carousel<T>({
             onClick={() => setStartIdx((s) => Math.min(maxStart, s + 1))}
             className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full border bg-white/90 p-2 shadow disabled:opacity-40"
           >
-            <ChevronRight className="h-5 w-5" />
+            <ChevronRight className="h-5 w-5 text-secondary" />
           </button>
         </>
       )}
