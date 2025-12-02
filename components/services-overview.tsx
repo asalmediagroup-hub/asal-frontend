@@ -90,7 +90,7 @@ export function ServicesOverview() {
     <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-[#B5040F]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-secondary">
             {t("servicesPageTitle")}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
@@ -114,11 +114,11 @@ export function ServicesOverview() {
                   style={{ boxShadow: "0 0 0 2px rgba(181,4,15,0.12), 0 12px 30px rgba(181,4,15,0.10)" }} />
 
                 <Card
-                  className="relative overflow-hidden rounded-2xl border border-transparent hover:border-[#B5040F1A] transition-all duration-300"
+                  className="relative overflow-hidden rounded-2xl border border-transparent hover:border-secondary/10 transition-all duration-300"
                   style={{ backgroundColor: "#F9FAFA" }}
                 >
                   {/* Subtle gradient wash that intensifies on hover */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#B5040F0D] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <CardContent className="p-8">
                     <div className={`flex items-start ${isRTL ? "space-x-reverse" : ""} space-x-4`}>
@@ -126,7 +126,7 @@ export function ServicesOverview() {
                       <div className="p-2 rounded-full flex-shrink-0 bg-white/70 shadow-sm transition-transform duration-300 group-hover:scale-105">
                         <IconComponent
                           className="h-6 w-6 transition-colors duration-300"
-                          style={{ color: "#B5040F80" }}
+                          className="text-secondary/50"
                         />
                       </div>
 
@@ -135,7 +135,7 @@ export function ServicesOverview() {
                         <div className="space-y-2">
                           <h3
                             className="text-xl font-semibold transition-colors duration-300"
-                            style={{ color: "#B5040F" }}
+                            className="text-secondary"
                           >
                             {service.title}
                           </h3>
@@ -153,7 +153,7 @@ export function ServicesOverview() {
                             >
                               <span
                                 className="w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all duration-300 group-hover:scale-110"
-                                style={{ backgroundColor: "#B5040F" }}
+                                className="bg-secondary"
                               />
                               <span>{feature}</span>
                             </li>
@@ -166,7 +166,7 @@ export function ServicesOverview() {
                   {/* Brand-colored bottom bar that slides in on hover */}
                   <div
                     className="absolute left-0 bottom-0 h-1 w-0 group-hover:w-full transition-all duration-500"
-                    style={{ backgroundColor: "#B5040F" }}
+                    className="bg-secondary"
                     aria-hidden
                   />
                 </Card>
@@ -179,7 +179,7 @@ export function ServicesOverview() {
           <Button
             asChild
             size="lg"
-            className="px-8 bg-[#B5040F] hover:bg-[#a0030d] transition-colors"
+            className="px-8 bg-secondary hover:bg-secondary/90 transition-colors"
           >
             <Link href="/services">
               {t("viewAllServices")}

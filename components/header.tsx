@@ -142,29 +142,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-16 md:h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center flex-shrink-0 gap-2 md:gap-3 hover:opacity-90 transition-opacity">
+          <Link href="/" className="flex items-center flex-shrink-0 hover:opacity-90 transition-opacity">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={logoSrc}
               alt={siteName}
-              width={48}
-              height={48}
-              className="h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14 object-contain"
+              width={150}
+              height={75}
+              className="h-14 w-auto md:h-16 md:w-auto lg:h-20 lg:w-auto object-contain"
             />
-            <span
-              className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl hidden xs:block sm:hidden"
-              style={{ color: "#B5040F" }}
-            >
-              {siteNameShort}
-            </span>
-            <span
-              className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl hidden sm:block"
-              style={{ color: "#B5040F" }}
-            >
-              {siteName}
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -285,7 +273,7 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button onClick={handleDownloadClick} className="bg-[#B5040F] hover:bg-[#B5040F]/90 text-white" size="sm">
+            <Button onClick={handleDownloadClick} className="bg-secondary hover:bg-secondary/90 text-white" size="sm">
               <Download className="h-4 w-4 xl:mr-2" />
               <span className="hidden xl:inline">{labels.nasiye}</span>
             </Button>
@@ -404,7 +392,7 @@ export function Header() {
 
                 {/* Action buttons (mobile) */}
                 <div className="flex gap-2">
-                  <Button onClick={handleDownloadClick} className="bg-[#B5040F] hover:bg-[#B5040F]/90 text-white flex-1">
+                  <Button onClick={handleDownloadClick} className="bg-secondary hover:bg-secondary/90 text-white flex-1">
                     <Download className="h-4 w-4 mr-2" />
                     {labels.nasiye}
                   </Button>

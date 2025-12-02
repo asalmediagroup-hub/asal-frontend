@@ -188,7 +188,7 @@ export function Footer() {
               <Button
                 className="w-full"
                 onClick={handleDownloadClick2}
-                style={{ backgroundColor: "#B5040F", color: "#fff" }}
+                className="bg-secondary text-white"
               >
                 <Smartphone className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"}`} />
                 {t("appStore")}

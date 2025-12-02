@@ -175,8 +175,8 @@ export function BrandHighlights() {
         href: "/brands/asal-tv",
         image: "/Asal.jpg",
         bodyColor: "#F9FAFA",
-        titleClass: "text-[#B5040F]",
-        buttonClass: "px-2 py-2 text-white bg-[#B5040F]",
+        titleClass: "text-secondary",
+        buttonClass: "px-2 py-2 text-white bg-secondary",
       },
       {
         name: t("brandJiilMediaName"),
@@ -244,7 +244,7 @@ export function BrandHighlights() {
             viewport={{ once: false, amount: 0.4 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-[#B5040F]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-secondary">
               {ctas.titleA} <span>{ctas.titleB}</span> {ctas.titleC}
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
