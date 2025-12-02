@@ -144,23 +144,23 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center flex-shrink-0">
+          <Link href="/" className="flex items-center flex-shrink-0 gap-2 md:gap-3 hover:opacity-90 transition-opacity">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={logoSrc}
               alt={siteName}
-              width={32}
-              height={32}
-              className="mr-0 md:mr-0 lg:mr-3"
+              width={48}
+              height={48}
+              className="h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14 object-contain"
             />
             <span
-              className="font-bold text-lg sm:text-xl hidden xs:block sm:hidden"
+              className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl hidden xs:block sm:hidden"
               style={{ color: "#B5040F" }}
             >
               {siteNameShort}
             </span>
             <span
-              className="font-bold text-lg sm:text-xl hidden sm:block"
+              className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl hidden sm:block"
               style={{ color: "#B5040F" }}
             >
               {siteName}
