@@ -350,7 +350,30 @@ export default function ServicesPage() {
         return bd - ad;
       });
     }
-    return Array.from(map.entries()).map(([category, services]) => ({ category, services }));
+
+    // Priority categories that should appear first
+    const priorityCategories = ["Advertising Release", "Media Coverage", "Production"];
+
+    const entries = Array.from(map.entries()).map(([category, services]) => ({ category, services }));
+
+    // Sort: priority categories first, then others
+    entries.sort((a, b) => {
+      const aIndex = priorityCategories.indexOf(a.category);
+      const bIndex = priorityCategories.indexOf(b.category);
+
+      // Both are priority categories - maintain order
+      if (aIndex !== -1 && bIndex !== -1) {
+        return aIndex - bIndex;
+      }
+      // Only a is priority
+      if (aIndex !== -1) return -1;
+      // Only b is priority
+      if (bIndex !== -1) return 1;
+      // Neither is priority - maintain original order
+      return 0;
+    });
+
+    return entries;
   }, [data, UNC]);
 
   // Translate category names (dynamic)
